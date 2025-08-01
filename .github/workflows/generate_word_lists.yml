@@ -1,0 +1,42 @@
+name: Generate Crimean Tatar Word Lists
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'dics/**'
+      - '.github/workflows/generate_word_lists.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository with LFS
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install pandas openpyxl
+      - name: Generate word lists
+        run: |
+          python generate_word_lists.py \
+            --pos-dict "dics/pos_dict_lat.txt" \
+            --freq-file "dics/wordlist_cleared.csv" \
+            --word-column "word" \
+            --freq-column "frequency" \
+            --out-dir "dics"
+      - name: Commit and push results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dics/solutions_crh_5.txt dics/valid_guesses_crh_5.txt
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Automatically generate updated word lists"
+            git push
+          fi

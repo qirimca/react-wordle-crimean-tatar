@@ -15,6 +15,6 @@ export const CONFIG = {
   normalization: 'NFC', // Стандарт нормалізації Unicode
   startDate: 'January 1, 2022 00:00:00',
   defaultLang: 'crh', // Мова інтерфейсу за замовчуванням
-  availableLangs: ['crh', 'uk', 'tr', 'en'], // Мови, доступні для перемикання
+  availableLangs: ['crh'], // Мови, доступні для перемикання
   escapeSpecialCharacters: true,
 }

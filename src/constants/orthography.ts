@@ -1,14 +1,20 @@
-import { CONFIG } from './config'
+// src/constants/orthography.ts
+// ПОКРАЩЕНА КРИМСЬКОТАТАРСЬКА КЛАВІАТУРА
 
-// Кримськотатарський алфавіт (латиниця)
 export const ORTHOGRAPHY = [
+  // Ряд 1 - правильний порядок QWERTY + кримськотатарські літери
   'q', 'w', 'e', 'r', 't', 'y', 'u', 'ı', 'o', 'p', 'ğ', 'ü', 'ñ',
+  
+  // Ряд 2 - ASDF... + кримськотатарські літери  
   'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'ş', 'i',
-  'z', 'x', 'c', 'v', 'b', 'n', 'm', 'ö', 'ç', 'â'
+  
+  // Ряд 3 - ZXCV... + кримськотатарські літери
+  'z', 'x', 'c', 'v', 'b', 'n', 'm', 'ö', 'ç', 'ä'
 ]
 
-if (CONFIG.normalization) {
-  ORTHOGRAPHY.forEach(
-    (val, i) => (ORTHOGRAPHY[i] = val.normalize(CONFIG.normalization))
-  )
-}
+// Визначення рядків клавіатури для правильного відображення
+export const KEYBOARD_ROWS = [
+  ['q', 'w', 'e', 'r', 't', 'y', 'u', 'ı', 'o', 'p', 'ğ', 'ü', 'ñ'],
+  ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'ş', 'i'],
+  ['z', 'x', 'c', 'v', 'b', 'n', 'm', 'ö', 'ç', 'ä']
+]

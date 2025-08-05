@@ -8,7 +8,7 @@ export const CONFIG = {
   locale: 'crh',
 
   // 🌍 Доступні мови
-  availableLangs: ['crh', 'en'],
+  availableLangs: ['crh'],
 
   // 🎨 Кольорова палітра для кримськотатарської Wordle
   colors: {
@@ -68,7 +68,7 @@ export const CONFIG = {
   },
 
   // 📊 Google Analytics
-  googleAnalytics: 'GTM-5R8847QH',
+  googleAnalytics: 'G-PVBCMHDYCL',
 
   // 🌐 Language for gameName
   language: 'Кримськотатарська',

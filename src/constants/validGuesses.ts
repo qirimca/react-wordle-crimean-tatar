@@ -49924,5 +49924,5 @@ export const VALIDGUESSES = [
   'şıpla',
   'şıpır',
   'şıray',
-  'şırın'
+  'şırın',
 ]

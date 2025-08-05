@@ -47,6 +47,7 @@ test('all words are correct length', () => {
   expect(wordsLongerThanDefinedLength).toEqual([])
 })
 
-test('date is valid', () => {
-  expect(new Date(CONFIG.startDate).valueOf()).toBeTruthy()
+test('config is valid', () => {
+  expect(CONFIG.wordLength).toBeGreaterThan(0)
+  expect(CONFIG.tries).toBeGreaterThan(0)
 })

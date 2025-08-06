@@ -1,6 +1,7 @@
 {
-  "short_name": "Reactle",
-  "name": "Reactle",
+  "short_name": "Qırımtatar Wordle",
+  "name": "Qırımtatar Söz Tapuv Oyunı - Crimean Tatar Wordle",
+  "description": "Qırımtatar tilinde 5 arifli söz tapuv oyunı. Qırımtatar sözlerini ögrenmek ve oyunla çalışmaq içün en yaxşı vasita.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -34,6 +35,9 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#0f172a"
+  "theme_color": "#99ceef",
+  "background_color": "#ffffff",
+  "lang": "crh",
+  "orientation": "portrait",
+  "categories": ["games", "education", "entertainment"]
 }

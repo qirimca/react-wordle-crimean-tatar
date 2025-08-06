@@ -7,6 +7,7 @@ import {
 
 import { ENABLE_ARCHIVED_GAMES } from '../../constants/settings'
 import { GAME_TITLE } from '../../constants/strings'
+import { LanguageSelector } from './LanguageSelector'
 
 type Props = {
   setIsInfoModalOpen: (value: boolean) => void
@@ -42,8 +43,9 @@ export const Navbar = ({
           <span className="font-bold">QIRI'M YOUNG</span>
         </p>
         <div className="right-icons">
+          <LanguageSelector />
           <ChartBarIcon
-            className="mr-3 h-6 w-6 cursor-pointer dark:stroke-white"
+            className="mr-3 ml-3 h-6 w-6 cursor-pointer dark:stroke-white"
             onClick={() => setIsStatsModalOpen(true)}
           />
           <CogIcon

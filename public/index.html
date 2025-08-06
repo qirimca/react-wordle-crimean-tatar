@@ -1,17 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="crh" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#99ceef" />
     <meta name="description" content="%REACT_APP_GAME_DESCRIPTION%" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="wordle, qırımtatar, crimean tatar, söz tapuv, word game, qirimca, language learning, крымскотатарский, игра слов" />
+    <meta name="author" content="QIRI'M YOUNG" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Crimean Tatar" />
+    <meta name="geo.region" content="UA-43" />
+    <meta name="geo.placename" content="Crimea" />
+    <meta name="application-name" content="Qırımtatar Wordle" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="%REACT_APP_GAME_NAME%" />
+    <meta property="og:description" content="%REACT_APP_GAME_DESCRIPTION%" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wordle.qirimca.org/" />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+    <meta property="og:site_name" content="QIRI'M YOUNG" />
+    <meta property="og:locale" content="crh_UA" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="ru_RU" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@qirimca" />
+    <meta name="twitter:creator" content="@qirimca" />
+    <meta name="twitter:title" content="%REACT_APP_GAME_NAME%" />
+    <meta name="twitter:description" content="%REACT_APP_GAME_DESCRIPTION%" />
+    <meta name="twitter:image" content="%PUBLIC_URL%/twitter-card.png" />
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Qırımtatar Söz Tapuv Oyunı",
+      "alternateName": "Crimean Tatar Wordle",
+      "description": "Interactive 5-letter word guessing game in Crimean Tatar language. Learn and practice Crimean Tatar vocabulary.",
+      "url": "https://wordle.qirimca.org/",
+      "applicationCategory": "GameApplication",
+      "applicationSubCategory": "Word Game",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "QIRI'M YOUNG",
+        "url": "https://qirimca.org"
+      },
+      "inLanguage": [
+        {
+          "@type": "Language",
+          "name": "Crimean Tatar",
+          "alternateName": "crh"
+        }
+      ],
+      "gameItem": {
+        "@type": "Thing",
+        "name": "Crimean Tatar Words"
+      }
+    }
+    </script>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://wordle.qirimca.org/" />
+    
+    <!-- Alternate Languages -->
+    <link rel="alternate" hreflang="crh" href="https://wordle.qirimca.org/" />
+    <link rel="alternate" hreflang="en" href="https://wordle.qirimca.org/?lang=en" />
+    <link rel="alternate" hreflang="tr" href="https://wordle.qirimca.org/?lang=tr" />
+    <link rel="alternate" hreflang="ru" href="https://wordle.qirimca.org/?lang=ru" />
+    <link rel="alternate" hreflang="x-default" href="https://wordle.qirimca.org/" />
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    
     <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--

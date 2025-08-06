@@ -36,6 +36,9 @@ export interface LocaleStrings {
   INFO_MODAL_BETA_DESCRIPTION: string
   INFO_MODAL_SOURCE_CODE_TEXT: string
   INFO_MODAL_SOURCE_CODE_LINK: string
+  // Settings Modal
+  SETTINGS_TITLE: string
+  TRANSFER_STATS_TEXT: string
 }
 
 export const LOCALE_CRH: LocaleStrings = {
@@ -76,6 +79,9 @@ export const LOCALE_CRH: LocaleStrings = {
   INFO_MODAL_BETA_DESCRIPTION: 'Bu çeviri otomatik oluşturuldu ve gönüllüler tarafından kontrol ediliyor. Hataları bildirmek ve çeviri iyileştirmelerine yardımcı olmak için bize ulaşın!',
   INFO_MODAL_SOURCE_CODE_TEXT: 'Bu epimiz bilgen ve sevgen söz tapuv oyunınıñ açıq menba versiyası',
   INFO_MODAL_SOURCE_CODE_LINK: 'kodqa şu yerde baqıñız',
+  // Settings Modal
+  SETTINGS_TITLE: 'Ayarlar',
+  TRANSFER_STATS_TEXT: 'Statistikalarıñıznı köçür',
 }
 
 export const LOCALE_EN: LocaleStrings = {
@@ -116,6 +122,9 @@ export const LOCALE_EN: LocaleStrings = {
   INFO_MODAL_BETA_DESCRIPTION: 'This translation was automatically generated and is being reviewed by volunteers. Please contact us to report errors and help improve translations!',
   INFO_MODAL_SOURCE_CODE_TEXT: 'This is an open source version of the word guessing game we all know and love',
   INFO_MODAL_SOURCE_CODE_LINK: 'check out the code here',
+  // Settings Modal
+  SETTINGS_TITLE: 'Settings',
+  TRANSFER_STATS_TEXT: 'Transfer your statistics',
 }
 
 export const LOCALE_TR: LocaleStrings = {
@@ -156,6 +165,9 @@ export const LOCALE_TR: LocaleStrings = {
   INFO_MODAL_BETA_DESCRIPTION: 'Bu çeviri otomatik oluşturuldu ve gönüllüler tarafından kontrol ediliyor. Hataları bildirmek ve çeviri iyileştirmelerine yardım etmek için bize ulaşın!',
   INFO_MODAL_SOURCE_CODE_TEXT: 'Bu, hepimizin bildiği ve sevdiği kelime tahmin oyununun açık kaynak versiyonu',
   INFO_MODAL_SOURCE_CODE_LINK: 'koda buradan bakın',
+  // Settings Modal
+  SETTINGS_TITLE: 'Ayarlar',
+  TRANSFER_STATS_TEXT: 'İstatistiklerinizi aktarın',
 }
 
 export const LOCALE_UK: LocaleStrings = {
@@ -196,6 +208,9 @@ export const LOCALE_UK: LocaleStrings = {
   INFO_MODAL_BETA_DESCRIPTION: 'Цей переклад був створений автоматично і перевіряється волонтерами. Будь ласка, звертайтеся до нас, щоб повідомити про помилки!',
   INFO_MODAL_SOURCE_CODE_TEXT: 'Це відкритокодна версія гри вгадування слів, яку ми всі знаємо і любимо',
   INFO_MODAL_SOURCE_CODE_LINK: 'подивитися код тут',
+  // Settings Modal
+  SETTINGS_TITLE: 'Налаштування',
+  TRANSFER_STATS_TEXT: 'Перенести вашу статистику',
 }
 
 export const getLocale = (): string => {
@@ -206,12 +221,8 @@ export const getLocale = (): string => {
     return langParam
   }
   
-  const browserLang = navigator.language.substring(0, 2)
-  switch (browserLang) {
-    case 'en': return 'en'
-    case 'uk': return 'uk'
-    default: return 'crh'
-  }
+  // За замовчуванням завжди кримськотатарська мова
+  return 'crh'
 }
 
 export const getLocalizedStrings = (): LocaleStrings => {

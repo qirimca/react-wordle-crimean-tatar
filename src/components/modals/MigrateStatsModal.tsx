@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { GameStats, StoredGameState } from '../../lib/localStorage'
+import { getLocalizedStrings } from '../../constants/locales'
 import { EmigratePanel } from '../stats/EmigratePanel'
 import { ImmigratePanel } from '../stats/ImmigratePanel'
 import { BaseModal } from './BaseModal'
@@ -17,10 +18,11 @@ export type MigrationStats = {
 
 export const MigrateStatsModal = ({ isOpen, handleClose }: Props) => {
   const [isEmigrateVisible, setIsEmigrateVisible] = useState(true)
+  const strings = getLocalizedStrings()
 
   return (
     <BaseModal
-      title="Transfer your statistics"
+      title={strings.TRANSFER_STATS_TEXT}
       isOpen={isOpen}
       handleClose={handleClose}
     >

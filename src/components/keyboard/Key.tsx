@@ -22,11 +22,9 @@ export const Key = ({
     'flex items-center justify-center rounded mx-0.5 text-xs font-bold cursor-pointer select-none',
     {
       'bg-slate-200 hover:bg-slate-300 active:bg-slate-400': !status,
-      'bg-slate-400 text-white': status === 'absent',
-      'bg-purple-500 hover:bg-purple-600 active:bg-purple-700 text-white':
-        status === 'correct',
-      'bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white':
-        status === 'present',
+      'key-absent text-white': status === 'absent',
+      'key-correct text-white': status === 'correct',
+      'key-present text-white': status === 'present',
     }
   )
 

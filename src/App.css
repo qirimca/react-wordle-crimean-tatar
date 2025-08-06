@@ -45,6 +45,35 @@
   --color-text-secondary: #85787b; /* Вторинний сірий текст */
 }
 
+/* Стилі для клітинок з правильними кольорами */
+.cell-correct {
+  background-color: var(--color-correct) !important;
+  border-color: var(--color-correct) !important;
+}
+
+.cell-present {
+  background-color: var(--color-present) !important;
+  border-color: var(--color-present) !important;
+}
+
+.cell-absent {
+  background-color: var(--color-absent) !important;
+  border-color: var(--color-absent) !important;
+}
+
+/* Стилі для клавіш з правильними кольорами */
+.key-correct {
+  background-color: var(--color-correct) !important;
+}
+
+.key-present {
+  background-color: var(--color-present) !important;
+}
+
+.key-absent {
+  background-color: var(--color-absent) !important;
+}
+
 /* Загальні стилі */
 * {
   box-sizing: border-box;

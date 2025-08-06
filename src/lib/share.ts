@@ -25,11 +25,11 @@ export const generateEmojiGrid = (guesses: string[][]) => {
         .map((letter, i) => {
           switch (status[i]) {
             case 'correct':
-              return '🟩'
+              return '🟦' // Блакитний замість зеленого для відповідності нашій палітрі
             case 'present':
-              return '🟨'
+              return '🟨' // Жовтий залишаємо
             default:
-              return '⬜'
+              return '⬜' // Білий/сірий залишаємо
           }
         })
         .join('')

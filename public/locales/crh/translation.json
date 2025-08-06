@@ -1,8 +1,8 @@
 {
   "about": "Oyun aqqında",
   "gameName": "Söz tapuv oyunı - {{language}}",
-  "enterKey": "Kirmek",
-  "deleteKey": "Silmek",
+  "enterKey": "⏎",
+  "deleteKey": "⌫",
   "notEnoughLetters": "Arif yeterli degil",
   "wordNotFound": "Söz tapılmadı",
   "solution": "Söz {{solution}} edi",

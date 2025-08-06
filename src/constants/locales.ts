@@ -208,7 +208,6 @@ export const getLocale = (): string => {
   
   const browserLang = navigator.language.substring(0, 2)
   switch (browserLang) {
-    case 'tr': return 'tr'
     case 'en': return 'en'
     case 'uk': return 'uk'
     default: return 'crh'
@@ -220,7 +219,6 @@ export const getLocalizedStrings = (): LocaleStrings => {
   
   switch (locale) {
     case 'en': return LOCALE_EN
-    case 'tr': return LOCALE_TR
     case 'uk': return LOCALE_UK
     case 'crh':
     default: return LOCALE_CRH

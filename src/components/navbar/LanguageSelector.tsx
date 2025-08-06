@@ -53,7 +53,11 @@ export const LanguageSelector = () => {
       </div>
       
       {isOpen && (
-        <div className="absolute top-full right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg z-50 min-w-max">
+        <div 
+          className="absolute top-full right-0 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg z-50 min-w-max"
+          onMouseEnter={() => setIsOpen(true)}
+          onMouseLeave={() => setIsOpen(false)}
+        >
           {LANGUAGES.map((lang) => (
             <button
               key={lang.code}

@@ -1,11 +1,11 @@
+import { solution } from '../../lib/words'
 import { Cell } from './Cell'
-import { CONFIG } from '../../constants/config'
 
 export const EmptyRow = () => {
-  const emptyCells = Array.from(Array(CONFIG.wordLength))
+  const emptyCells = Array.from(Array(solution.length))
 
   return (
-    <div className="flex justify-center mb-1">
+    <div className="mb-1 flex justify-center">
       {emptyCells.map((_, i) => (
         <Cell key={i} />
       ))}

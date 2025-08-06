@@ -1,22 +1,30 @@
-import { KeyValue } from '../../lib/keyboard'
-import { getStatuses } from '../../lib/statuses'
-import { Key } from './Key'
 import { useEffect } from 'react'
-import { KEYBOARD_ROWS } from '../../constants/orthography'
-import { useTranslation } from 'react-i18next'
+
+import { DELETE_TEXT, ENTER_TEXT } from '../../constants/strings'
+import { getStatuses } from '../../lib/statuses'
+import { localeAwareUpperCase } from '../../lib/words'
+import { Key } from './Key'
 
 type Props = {
   onChar: (value: string) => void
   onDelete: () => void
   onEnter: () => void
-  guesses: string[][]
+  solution: string
+  guesses: string[]
+  isRevealing?: boolean
 }
 
-export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
-  const { t } = useTranslation()
-  const charStatuses = getStatuses(guesses)
+export const Keyboard = ({
+  onChar,
+  onDelete,
+  onEnter,
+  solution,
+  guesses,
+  isRevealing,
+}: Props) => {
+  const charStatuses = getStatuses(solution, guesses)
 
-  const onClick = (value: KeyValue) => {
+  const onClick = (value: string) => {
     if (value === 'ENTER') {
       onEnter()
     } else if (value === 'DELETE') {
@@ -32,14 +40,36 @@ export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
         onEnter()
       } else if (e.code === 'Backspace') {
         onDelete()
+      } else {
+        let key = localeAwareUpperCase(e.key)
+        
+        // Спеціальні маппінги для англійської клавіатури
+        if (e.code === 'Slash') { // / -> Â
+          key = 'Â'
+        } else if (e.code === 'Backslash') { // \ -> Ñ  
+          key = 'Ñ'
+        } else if (e.code === 'BracketLeft') { // [ -> Ğ
+          key = 'Ğ'
+        } else if (e.code === 'BracketRight') { // ] -> Ü
+          key = 'Ü'
+        } else if (e.code === 'Semicolon') { // ; -> Ş
+          key = 'Ş'
+        } else if (e.code === 'Quote') { // ' -> İ (кримськотатарське I з крапкою)
+          key = 'İ'
+        } else if (e.code === 'Comma') { // , -> Ö
+          key = 'Ö'
+        } else if (e.code === 'Period') { // . -> Ç
+          key = 'Ç'
+        } else if (key === 'I') { // Англійська I -> кримськотатарська I без крапки
+          key = 'I'
+        }
+        
+        // Crimean Tatar alphabet letters
+        const validChars = ['A', 'B', 'C', 'Ç', 'D', 'E', 'F', 'G', 'Ğ', 'H', 'I', 'İ', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'Ö', 'P', 'Q', 'R', 'S', 'Ş', 'T', 'U', 'Ü', 'V', 'W', 'X', 'Y', 'Z', 'Â']
+        if (key.length === 1 && validChars.includes(key)) {
+          onChar(key)
+        }
       }
-      // Take away key event listener for now
-      // else {
-      //   const key = e.key.toUpperCase()
-      //   if (key.length === 1 && key >= 'A' && key <= 'Z') {
-      //     onChar(key)
-      //   }
-      // }
     }
     window.addEventListener('keyup', listener)
     return () => {
@@ -49,44 +79,42 @@ export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
 
   return (
     <div>
-      {/* Перший ряд + DELETE в кінці */}
-      <div className="flex justify-center mb-1">
-        {KEYBOARD_ROWS[0].map((char) => (
+      <div className="mb-1 flex justify-center">
+        {['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'Ğ', 'Ü'].map((key) => (
           <Key
-            key={char}
-            value={char}
+            value={key}
+            key={key}
             onClick={onClick}
-            status={charStatuses[char]}
+            status={charStatuses[key]}
+            isRevealing={isRevealing}
           />
         ))}
-        <Key key="deleteKey" width={65.4} value="DELETE" onClick={onClick}>
-          {t('deleteKey')}
+        <Key width={65.4} value="DELETE" onClick={onClick}>
+          {DELETE_TEXT}
         </Key>
       </div>
-      
-      {/* Другий ряд + ENTER в кінці */}
-      <div className="flex justify-center mb-1">
-        {KEYBOARD_ROWS[1].map((char) => (
+      <div className="mb-1 flex justify-center">
+        {['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Ş', 'İ', 'Ñ'].map((key) => (
           <Key
-            key={char}
-            value={char}
+            value={key}
+            key={key}
             onClick={onClick}
-            status={charStatuses[char]}
+            status={charStatuses[key]}
+            isRevealing={isRevealing}
           />
         ))}
-        <Key key="enterKey" width={65.4} value="ENTER" onClick={onClick}>
-          {t('enterKey')}
+        <Key width={65.4} value="ENTER" onClick={onClick}>
+          {ENTER_TEXT}
         </Key>
       </div>
-      
-      {/* Третій ряд */}
       <div className="flex justify-center">
-        {KEYBOARD_ROWS[2].map((char) => (
+        {['Z', 'X', 'C', 'V', 'B', 'N', 'M', 'Ö', 'Ç', 'Â'].map((key) => (
           <Key
-            key={char}
-            value={char}
+            value={key}
+            key={key}
             onClick={onClick}
-            status={charStatuses[char]}
+            status={charStatuses[key]}
+            isRevealing={isRevealing}
           />
         ))}
       </div>

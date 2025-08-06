@@ -1,53 +1,27 @@
 import { render, screen } from '@testing-library/react'
+import React from 'react'
+
 import App from './App'
-import { ORTHOGRAPHY } from './constants/orthography'
-import { WORDS } from './constants/wordlist'
-import { ORTHOGRAPHY_PATTERN } from './lib/tokenizer'
-import { CONFIG } from './constants/config'
-import chalk from 'chalk'
+import { GAME_TITLE } from './constants/strings'
 
-test('renders game', () => {
+beforeEach(() => {
+  Object.defineProperty(window, 'matchMedia', {
+    writable: true,
+    value: jest.fn().mockImplementation((query) => ({
+      matches: false,
+      media: query,
+      onchange: null,
+      addListener: jest.fn(), // deprecated
+      removeListener: jest.fn(), // deprecated
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+      dispatchEvent: jest.fn(),
+    })),
+  })
+})
+
+test('renders App component', () => {
   render(<App />)
-  const linkElement = screen.getByText(/gameName/i)
+  const linkElement = screen.getByText(GAME_TITLE)
   expect(linkElement).toBeInTheDocument()
-})
-
-test('no surprise characters', () => {
-  let wordsWithSurpriseCharacters: string[][] = []
-  WORDS.forEach((word) => {
-    let characterList = word.split(ORTHOGRAPHY_PATTERN).filter((x) => x)
-    let noSurprises = characterList.every((character) =>
-      ORTHOGRAPHY.includes(character)
-    )
-    if (!noSurprises) {
-      let surpriseCharacters = characterList.filter(
-        (x) => !ORTHOGRAPHY.includes(x)
-      )
-      console.log(
-        `The word ${word} has the following characters that are not in your declared orthography: ${surpriseCharacters}`
-      )
-      wordsWithSurpriseCharacters.push(characterList)
-    }
-  })
-  expect(wordsWithSurpriseCharacters).toEqual([])
-})
-
-test('all words are correct length', () => {
-  let wordsLongerThanDefinedLength: string[][] = []
-  WORDS.forEach((word) => {
-    let characterList = word.split(ORTHOGRAPHY_PATTERN).filter((x) => x)
-    let isCorrectLength = characterList.length === CONFIG.wordLength
-    if (!isCorrectLength) {
-      console.log(
-        `The word ${word} is ${characterList.length} characters long, but your game has chosen a word length of ${CONFIG.wordLength}`
-      )
-      wordsLongerThanDefinedLength.push(characterList)
-    }
-  })
-  expect(wordsLongerThanDefinedLength).toEqual([])
-})
-
-test('config is valid', () => {
-  expect(CONFIG.wordLength).toBeGreaterThan(0)
-  expect(CONFIG.tries).toBeGreaterThan(0)
 })

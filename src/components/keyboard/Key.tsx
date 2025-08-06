@@ -1,14 +1,18 @@
-import { ReactNode } from 'react'
 import classnames from 'classnames'
-import { KeyValue } from '../../lib/keyboard'
+import { ReactNode } from 'react'
+
+import { REVEAL_TIME_MS } from '../../constants/settings'
+import { getStoredIsHighContrastMode } from '../../lib/localStorage'
 import { CharStatus } from '../../lib/statuses'
+import { solution } from '../../lib/words'
 
 type Props = {
   children?: ReactNode
-  value: KeyValue
+  value: string
   width?: number
   status?: CharStatus
-  onClick: (value: KeyValue) => void
+  onClick: (value: string) => void
+  isRevealing?: boolean
 }
 
 export const Key = ({
@@ -17,16 +21,27 @@ export const Key = ({
   width = 40,
   value,
   onClick,
+  isRevealing,
 }: Props) => {
+  const keyDelayMs = REVEAL_TIME_MS * solution.length
+  const isHighContrast = getStoredIsHighContrastMode()
+
   const classes = classnames(
-    'flex items-center justify-center rounded mx-0.5 text-xs font-bold cursor-pointer select-none',
+    'xxshort:h-8 xxshort:w-8 xxshort:text-xxs xshort:w-10 xshort:h-10 flex short:h-12 h-14 items-center justify-center rounded mx-0.5 text-xs font-bold cursor-pointer select-none dark:text-white',
     {
-      'bg-slate-200 hover:bg-slate-300 active:bg-slate-400': !status,
+      'transition ease-in-out': isRevealing,
+      'bg-slate-200 dark:bg-slate-600 hover:bg-slate-300 active:bg-slate-400':
+        !status,
       'key-absent text-white': status === 'absent',
       'key-correct text-white': status === 'correct',
       'key-present text-white': status === 'present',
     }
   )
+
+  const styles = {
+    transitionDelay: isRevealing ? `${keyDelayMs}ms` : 'unset',
+    width: `${width}px`,
+  }
 
   const handleClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
     onClick(value)
@@ -35,11 +50,18 @@ export const Key = ({
 
   return (
     <button
-      style={{ width: `${width}px`, height: '58px' }}
+      style={styles}
+      aria-label={`${value}${status ? ' ' + status : ''}`}
       className={classes}
       onClick={handleClick}
     >
-      {children || value}
+      {value === 'ENTER' && children === 'done' ? (
+        <span className="material-icons" style={{fontSize: '18px'}}>done</span>
+      ) : value === 'DELETE' && children === 'backspace' ? (
+        <span className="material-icons" style={{fontSize: '18px'}}>backspace</span>
+      ) : (
+        children || value
+      )}
     </button>
   )
 }

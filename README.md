@@ -1,53 +1,99 @@
-# Any-Language Word Guessing Game
+# 🎯 Qırımtatar Söz Tapuv Oyunı / Crimean Tatar Wordle
 
-## Changes in this fork
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://qirimca.github.io/react-wordle-crimean-tatar/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Crimean Tatar](https://img.shields.io/badge/Language-Qırımtatar-red.svg)](https://qirimca.org)
 
-I've adapted this code to allow for simply adapting it to another language. The wordlist and orthography (writing system) here are for the Gitksan language, but this repository is meant to be adapted to other languages. I've also added a script for publishing on GitHub Pages.
+A Crimean Tatar adaptation of the popular Wordle game, featuring full localization and optimized keyboard layout for the Crimean Tatar language.
 
-_Summary of changes_
+**🎮 [Play Now / Şindi Oynan!](https://qirimca.github.io/react-wordle-crimean-tatar/)**
 
-- Allow letters in the "orthography.ts" to be digraphs or multigraphs (letters that are more than one character)
-- Allow more or less atempts than 6
-- Allow the length of words to be more or less than 5
-- Added a configuration file to define language-specific metadata
-- Added functionality for free deployment to GitHub Pages
-- Dynamically render the keyboard based on the defined orthography
-- Use Unicode normalization by default
-- Use BC Sans open source font to better render Indigenous language orthographies in BC, Canada. See the blog to change the font
-- Complete localization/translateability of the interface using react-i18next
+## 🌟 Features
 
-_To adapt for your language (the basics):_
+### Language Support
+- **Complete Crimean Tatar localization** - Interface, messages, and help text
+- **Optimized keyboard layout** - Turkish-style layout (İ after Ş, I after U)  
+- **Extended character support** - â, ñ, ğ, ü, ş, ı, ö, ç accessible via keyboard shortcuts
+- **Unicode normalization** - Proper handling of İ/I variants and special characters
 
-1. Change the file in `src/constants/orthography.ts` to use your language's writing system.
-2. Change the file in `src/constants/wordlist.ts` to use your language's words.
-3. Change the file in `src/constants/validGuesses.ts` to include all valid guesses for your language.
-4. Change the file in `src/constants/config.ts` to include meta data about your language. If your language needs words longer or shorter than 5, you can set that in this file and also set the number of tries.
-5. Publish on GitHub Pages by changing the `homepage` key in `package.json` and running `npm run deploy` or just committing to the main branch (and a GitHub workflow will take care of the rest).
+### Game Features  
+- **Curated 5-letter word dictionary** - 148 target words, 32,000+ valid words
+- **QIRI'M YOUNG brand colors**:
+  - 🟦 Blue (#99ceef) - Correct position
+  - 🟨 Yellow (#fde61a) - Wrong position  
+  - 🔳 Gray (#85787b) - Not in word
+- **Share functionality** - Custom emojis with game URL
+- **Statistics tracking** - Complete game analytics
+- **Material Design UI** - Clean, accessible icons
 
-For more information, including how to localize the interface to your language, visit the blog article: https://blog.mothertongues.org/word-guessing-game/.
+### Technical Features
+- **Keyboard shortcuts**: `/` → `â`, `\` → `ñ`
+- **Responsive design** - Mobile and desktop optimized
+- **Dark mode support** - Automatic theme detection
+- **GitHub Pages ready** - Easy deployment
 
-The interface is translated by default in English, Kiswahili, Mandarin and Spanish - other translations are very welcome!  To add translations please submit a pull request with the following steps:
+## 🚀 Quick Start
 
-1. Add an appropriate localiztion file in `public/locales`
-2. Update the other localization files in `public/locales` to include the additional langauge
-3. Update the `CONFIG.availableLangs` variable in `src/constants/config.ts` to include your language. 
-
-Thanks to Carolyn O'Meara (https://github.com/ckomeara) for providing the Spanish translation.
-Thanks to Haowen Jiang (https://github.com/howard-haowen) for providing the 中文 translation.
-Thanks to Benson Muite (https://github.com/bkmgit) for providing the Kiswahili translation.
-
-_To Run Locally:_
-Clone the repository and perform the following command line actions:
 ```bash
-$ cd anylanguage-word-guessing-game
-$ npm install
-$ npm run start
+# Clone and install
+git clone https://github.com/qirimca/react-wordle-crimean-tatar.git
+cd react-wordle-crimean-tatar
+npm install
+
+# Development
+npm start
+
+# Production build  
+npm run build
+npm run deploy
 ```
 
-_To build/run docker container:_
-```bash
-$ docker build -t anylanguage-word-guessing-game .
-$ docker run -d -p 3000:3000 anylanguage-word-guessing-game
-```
-open http://localhost:3000 in browser.
+## 🎮 How to Play / Nasıl Oynanır
 
+**English:**
+1. Guess the **5-letter Crimean Tatar word** in 6 tries
+2. Each guess must be a valid Crimean Tatar word  
+3. Tiles change color to show how close you are
+
+**Qırımtatarca:**
+1. **5 arifli qırımtatar sözünü** 6 denemede tapın
+2. Er tahmin keçerli qırımtatar sözü olmalı
+3. Kareler reñk deñiştirip ne qadar yaqın olduñuznı kösterir
+
+## 🔧 Technology Stack
+
+- **React 18** - Frontend framework
+- **TypeScript** - Type safety  
+- **Tailwind CSS** - Styling
+- **Material Design Icons** - UI components
+- **GitHub Actions** - CI/CD pipeline
+- **GitHub Pages** - Hosting platform
+
+## 📚 Dictionary
+
+- **148 target words** - Carefully selected common 5-letter words
+- **32,000+ validation words** - Comprehensive Crimean Tatar dictionary
+- **Frequency-based** - Common words appear more often
+- **Unicode compliant** - Full Crimean Tatar character support
+
+## 🌐 Deployment
+
+**Live at:** [qirimca.github.io/react-wordle-crimean-tatar](https://qirimca.github.io/react-wordle-crimean-tatar/)
+
+GitHub Pages automatically deploys from the `master` branch via GitHub Actions.
+
+## 🙏 Credits
+
+- **Original Wordle** - Josh Wardle (NYT)
+- **React Implementation** - [@cwackerfuss](https://github.com/cwackerfuss/react-wordle)  
+- **Docker Version** - [@modem7](https://github.com/modem7/react-wordle)
+- **Crimean Tatar Adaptation** - [QIRI'M YOUNG](https://qirimca.org)
+
+## 📄 License
+
+MIT License - Free for personal and commercial use.
+
+---
+
+**🎯 Qırımtatar tilini saqlav ve inkişaf ettirmek içün!**  
+*Preserving and developing the Crimean Tatar language!*

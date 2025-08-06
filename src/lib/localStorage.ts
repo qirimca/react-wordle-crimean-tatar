@@ -1,16 +1,23 @@
 const gameStateKey = 'gameState'
+const archiveGameStateKey = 'archiveGameState'
+const highContrastKey = 'highContrast'
 
-type StoredGameState = {
-  guesses: string[][]
+export type StoredGameState = {
+  guesses: string[]
   solution: string
 }
 
-export const saveGameStateToLocalStorage = (gameState: StoredGameState) => {
-  localStorage.setItem(gameStateKey, JSON.stringify(gameState))
+export const saveGameStateToLocalStorage = (
+  isLatestGame: boolean,
+  gameState: StoredGameState
+) => {
+  const key = isLatestGame ? gameStateKey : archiveGameStateKey
+  localStorage.setItem(key, JSON.stringify(gameState))
 }
 
-export const loadGameStateFromLocalStorage = () => {
-  const state = localStorage.getItem(gameStateKey)
+export const loadGameStateFromLocalStorage = (isLatestGame: boolean) => {
+  const key = isLatestGame ? gameStateKey : archiveGameStateKey
+  const state = localStorage.getItem(key)
   return state ? (JSON.parse(state) as StoredGameState) : null
 }
 
@@ -32,4 +39,17 @@ export const saveStatsToLocalStorage = (gameStats: GameStats) => {
 export const loadStatsFromLocalStorage = () => {
   const stats = localStorage.getItem(gameStatKey)
   return stats ? (JSON.parse(stats) as GameStats) : null
+}
+
+export const setStoredIsHighContrastMode = (isHighContrast: boolean) => {
+  if (isHighContrast) {
+    localStorage.setItem(highContrastKey, '1')
+  } else {
+    localStorage.removeItem(highContrastKey)
+  }
+}
+
+export const getStoredIsHighContrastMode = () => {
+  const highContrast = localStorage.getItem(highContrastKey)
+  return highContrast === '1'
 }

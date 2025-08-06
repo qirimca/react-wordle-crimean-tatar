@@ -29,7 +29,7 @@ export const shareStatus = (
       guesses,
       getEmojiTiles(isDarkMode, isHighContrastMode)
     ) +
-    '\n\nwordle.ctcorpus.org'
+    '\n\nwordle.qirimca.org'
 
   const shareData = { text: textToShare }
 

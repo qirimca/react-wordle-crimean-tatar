@@ -1,5 +1,6 @@
 import { Cell } from '../grid/Cell'
 import { BaseModal } from './BaseModal'
+import { getLocalizedStrings } from '../../constants/locales'
 
 type Props = {
   isOpen: boolean
@@ -7,10 +8,12 @@ type Props = {
 }
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
+  const strings = getLocalizedStrings()
+  
   return (
-    <BaseModal title="Nasıl oynanır" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title={strings.INFO_MODAL_TITLE} isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Sözü 6 deneme ile tapıñız. Er deneme soñra, karoçıqları rengi sözge qañcalıq yaqın olğanıñızı kösterir.
+{strings.INFO_MODAL_DESCRIPTION}
       </p>
 
       <div className="mb-1 mt-4 flex justify-center">
@@ -26,7 +29,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="P" isCompleted={true} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        K arifi sözde bar ve doğru yerde tura.
+{strings.INFO_MODAL_CORRECT_EXPLANATION}
       </p>
 
       <div className="mb-1 mt-4 flex justify-center">
@@ -42,7 +45,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="M" isCompleted={true} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        L arifi sözde bar amma yañış yerde tura.
+{strings.INFO_MODAL_PRESENT_EXPLANATION}
       </p>
 
       <div className="mb-1 mt-4 flex justify-center">
@@ -53,14 +56,26 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="L" isCompleted={true} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        E arifi bu sözde iç bir yerde yoq.
+{strings.INFO_MODAL_ABSENT_EXPLANATION}
       </p>
 
-      <p className="mt-6 text-sm italic text-gray-500 dark:text-gray-300">
+      <div className="mt-6 p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border border-yellow-200 dark:border-yellow-700">
+        <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium mb-2">
+          ⚠️ Beta sürüm / Beta version / Бета версія
+        </p>
+        <p className="text-xs text-yellow-700 dark:text-yellow-300">
+          Bu çeviri otomatik oluşturuldu ve gönüllüler tarafından kontrol ediliyor. 
+          Hataları bildirmek ve çeviri iyileştirmelerine yardımcı olmak için bize ulaşın!
+        </p>
+      </div>
+
+      <p className="mt-4 text-sm italic text-gray-500 dark:text-gray-300">
         Bu epimiz bilgen ve sevgen söz tapuv oyunınıñ açıq menba versiyası -{' '}
         <a
-          href="https://github.com/qirimca/crimean-tatar-wordle"
+          href="https://github.com/qirimca/react-wordle-crimean-tatar"
           className="font-bold underline"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           kodqa şu yerde baqıñız
         </a>{' '}

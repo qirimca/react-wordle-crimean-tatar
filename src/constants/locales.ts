@@ -26,11 +26,21 @@ export interface LocaleStrings {
   DATEPICKER_CHOOSE_TEXT: string
   DATEPICKER_TODAY_TEXT: string
   ARCHIVE_GAMEDATE_TEXT: string
+  // Info Modal
+  INFO_MODAL_TITLE: string
+  INFO_MODAL_DESCRIPTION: string
+  INFO_MODAL_CORRECT_EXPLANATION: string
+  INFO_MODAL_PRESENT_EXPLANATION: string
+  INFO_MODAL_ABSENT_EXPLANATION: string
+  INFO_MODAL_BETA_TITLE: string
+  INFO_MODAL_BETA_DESCRIPTION: string
+  INFO_MODAL_SOURCE_CODE_TEXT: string
+  INFO_MODAL_SOURCE_CODE_LINK: string
 }
 
 export const LOCALE_CRH: LocaleStrings = {
   GAME_TITLE: 'Qırımtatar Söz Tapuv Oyunı',
-  WIN_MESSAGES: ['Pek güzel!', 'Aferim!', 'Yahşí yapıldı!', 'Mükemmel!', 'Fevqalade!'],
+  WIN_MESSAGES: ['Pek güzel!', 'Aferim!', 'Yaxşı yapıldı!', 'Mükemmel!', 'Fevqalade!'],
   GAME_COPIED_MESSAGE: 'Oyun kopyalandı',
   NOT_ENOUGH_LETTERS_MESSAGE: 'Arif yeterli degil',
   WORD_NOT_FOUND_MESSAGE: 'Söz tapılmadı',
@@ -56,6 +66,16 @@ export const LOCALE_CRH: LocaleStrings = {
   DATEPICKER_CHOOSE_TEXT: 'Saylan',
   DATEPICKER_TODAY_TEXT: 'bugün',
   ARCHIVE_GAMEDATE_TEXT: 'Oyun tarihi',
+  // Info Modal
+  INFO_MODAL_TITLE: 'Nasıl oynanır',
+  INFO_MODAL_DESCRIPTION: 'Sözü 6 deneme ile tapıñız. Er deneme soñra, karoçıqları rengi sözge qañcalıq yaqın olğanıñızı kösterir.',
+  INFO_MODAL_CORRECT_EXPLANATION: 'K arifi sözde bar ve doğru yerde tura.',
+  INFO_MODAL_PRESENT_EXPLANATION: 'L arifi sözde bar amma yañış yerde tura.',
+  INFO_MODAL_ABSENT_EXPLANATION: 'E arifi bu sözde iç bir yerde yoq.',
+  INFO_MODAL_BETA_TITLE: '⚠️ Beta sürüm',
+  INFO_MODAL_BETA_DESCRIPTION: 'Bu çeviri otomatik oluşturuldu ve gönüllüler tarafından kontrol ediliyor. Hataları bildirmek ve çeviri iyileştirmelerine yardımcı olmak için bize ulaşın!',
+  INFO_MODAL_SOURCE_CODE_TEXT: 'Bu epimiz bilgen ve sevgen söz tapuv oyunınıñ açıq menba versiyası',
+  INFO_MODAL_SOURCE_CODE_LINK: 'kodqa şu yerde baqıñız',
 }
 
 export const LOCALE_EN: LocaleStrings = {
@@ -86,6 +106,16 @@ export const LOCALE_EN: LocaleStrings = {
   DATEPICKER_CHOOSE_TEXT: 'Choose',
   DATEPICKER_TODAY_TEXT: 'today',
   ARCHIVE_GAMEDATE_TEXT: 'Game date',
+  // Info Modal
+  INFO_MODAL_TITLE: 'How to play',
+  INFO_MODAL_DESCRIPTION: 'Guess the word in 6 tries. After each guess, the color of the tiles will change to show how close your guess was to the word.',
+  INFO_MODAL_CORRECT_EXPLANATION: 'The letter K is in the word and in the correct spot.',
+  INFO_MODAL_PRESENT_EXPLANATION: 'The letter L is in the word but in the wrong spot.',
+  INFO_MODAL_ABSENT_EXPLANATION: 'The letter E is not in the word in any spot.',
+  INFO_MODAL_BETA_TITLE: '⚠️ Beta version',
+  INFO_MODAL_BETA_DESCRIPTION: 'This translation was automatically generated and is being reviewed by volunteers. Please contact us to report errors and help improve translations!',
+  INFO_MODAL_SOURCE_CODE_TEXT: 'This is an open source version of the word guessing game we all know and love',
+  INFO_MODAL_SOURCE_CODE_LINK: 'check out the code here',
 }
 
 export const LOCALE_TR: LocaleStrings = {
@@ -116,6 +146,56 @@ export const LOCALE_TR: LocaleStrings = {
   DATEPICKER_CHOOSE_TEXT: 'Seç',
   DATEPICKER_TODAY_TEXT: 'bugün',
   ARCHIVE_GAMEDATE_TEXT: 'Oyun tarihi',
+  // Info Modal
+  INFO_MODAL_TITLE: 'Nasıl oynanır',
+  INFO_MODAL_DESCRIPTION: 'Kelimeyi 6 denemede tahmin edin. Her tahminden sonra, tahmininizin kelimeye ne kadar yakın olduğunu göstermek için karoların rengi değişecek.',
+  INFO_MODAL_CORRECT_EXPLANATION: 'K harfi kelimede var ve doğru yerde.',
+  INFO_MODAL_PRESENT_EXPLANATION: 'L harfi kelimede var ama yanlış yerde.',
+  INFO_MODAL_ABSENT_EXPLANATION: 'E harfi kelimede hiç yok.',
+  INFO_MODAL_BETA_TITLE: '⚠️ Beta sürüm',
+  INFO_MODAL_BETA_DESCRIPTION: 'Bu çeviri otomatik oluşturuldu ve gönüllüler tarafından kontrol ediliyor. Hataları bildirmek ve çeviri iyileştirmelerine yardım etmek için bize ulaşın!',
+  INFO_MODAL_SOURCE_CODE_TEXT: 'Bu, hepimizin bildiği ve sevdiği kelime tahmin oyununun açık kaynak versiyonu',
+  INFO_MODAL_SOURCE_CODE_LINK: 'koda buradan bakın',
+}
+
+export const LOCALE_UK: LocaleStrings = {
+  GAME_TITLE: 'Кримськотатарський Wordle',
+  WIN_MESSAGES: ['Чудово!', 'Молодець!', 'Добре зроблено!', 'Ідеально!', 'Відмінно!'],
+  GAME_COPIED_MESSAGE: 'Гру скопійовано',
+  NOT_ENOUGH_LETTERS_MESSAGE: 'Недостатньо літер',
+  WORD_NOT_FOUND_MESSAGE: 'Слово не знайдено',
+  HARD_MODE_ALERT_MESSAGE: 'Складний режим можна увімкнути лише на початку!',
+  HARD_MODE_DESCRIPTION: 'Відкриті підказки мають використовуватися в наступних спробах',
+  HIGH_CONTRAST_MODE_DESCRIPTION: 'Для покращення сприйняття кольорів',
+  CORRECT_WORD_MESSAGE: (solution: string) => `Слово було ${solution}`,
+  WRONG_SPOT_MESSAGE: (guess: string, position: number) => `Літера ${guess} має бути на ${position} позиції`,
+  NOT_CONTAINED_MESSAGE: (letter: string) => `Здогадка має містити ${letter}`,
+  ENTER_TEXT: 'done',
+  DELETE_TEXT: 'backspace',
+  STATISTICS_TITLE: 'Статистика',
+  GUESS_DISTRIBUTION_TEXT: 'Розподіл спроб',
+  NEW_WORD_TEXT: 'Нове слово',
+  SHARE_TEXT: 'Поділитися',
+  SHARE_FAILURE_TEXT: 'Не вдалося поділитися результатами. Ця функція доступна лише в безпечних контекстах (HTTPS).',
+  TOTAL_TRIES_TEXT: 'Всього спроб',
+  SUCCESS_RATE_TEXT: 'Відсоток успіху',
+  CURRENT_STREAK_TEXT: 'Поточна серія',
+  BEST_STREAK_TEXT: 'Найкраща серія',
+  DISCOURAGE_INAPP_BROWSER_TEXT: "Ви використовуєте вбудований браузер і можете мати проблеми з діленням або збереженням результатів. Рекомендуємо використовувати основний браузер пристрою.",
+  DATEPICKER_TITLE: 'Вибрати минулу дату',
+  DATEPICKER_CHOOSE_TEXT: 'Вибрати',
+  DATEPICKER_TODAY_TEXT: 'сьогодні',
+  ARCHIVE_GAMEDATE_TEXT: 'Дата гри',
+  // Info Modal
+  INFO_MODAL_TITLE: 'Як грати',
+  INFO_MODAL_DESCRIPTION: 'Вгадайте слово за 6 спроб. Після кожного вгадування колір плиток зміниться, щоб показати, наскільки близьким було ваше вгадування.',
+  INFO_MODAL_CORRECT_EXPLANATION: 'Літера K є у слові і на правильному місці.',
+  INFO_MODAL_PRESENT_EXPLANATION: 'Літера L є у слові, але на неправильному місці.',
+  INFO_MODAL_ABSENT_EXPLANATION: 'Літери E немає в слові.',
+  INFO_MODAL_BETA_TITLE: '⚠️ Бета версія',
+  INFO_MODAL_BETA_DESCRIPTION: 'Цей переклад був створений автоматично і перевіряється волонтерами. Будь ласка, звертайтеся до нас, щоб повідомити про помилки!',
+  INFO_MODAL_SOURCE_CODE_TEXT: 'Це відкритокодна версія гри вгадування слів, яку ми всі знаємо і любимо',
+  INFO_MODAL_SOURCE_CODE_LINK: 'подивитися код тут',
 }
 
 export const getLocale = (): string => {
@@ -130,6 +210,7 @@ export const getLocale = (): string => {
   switch (browserLang) {
     case 'tr': return 'tr'
     case 'en': return 'en'
+    case 'uk': return 'uk'
     default: return 'crh'
   }
 }
@@ -140,6 +221,7 @@ export const getLocalizedStrings = (): LocaleStrings => {
   switch (locale) {
     case 'en': return LOCALE_EN
     case 'tr': return LOCALE_TR
+    case 'uk': return LOCALE_UK
     case 'crh':
     default: return LOCALE_CRH
   }

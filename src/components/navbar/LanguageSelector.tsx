@@ -10,6 +10,7 @@ const LANGUAGES: Language[] = [
   { code: 'crh', name: 'Crimean Tatar', nativeName: 'Qırımtatar' },
   { code: 'en', name: 'English', nativeName: 'English' },
   { code: 'tr', name: 'Turkish', nativeName: 'Türkçe' },
+  { code: 'uk', name: 'Ukrainian', nativeName: 'Українська' },
 ]
 
 export const LanguageSelector = () => {
@@ -26,19 +27,24 @@ export const LanguageSelector = () => {
   }
 
   return (
-    <div className="language-selector">
-      <select
-        value={currentLocale}
-        onChange={(e) => changeLanguage(e.target.value)}
-        className="text-xs bg-transparent border border-gray-300 dark:border-gray-500 rounded px-2 py-1 text-gray-700 dark:text-gray-300 hover:border-gray-400 dark:hover:border-gray-400 focus:outline-none focus:border-blue-500"
-        title="Select language / Dil seç / Tañla til"
-      >
-        {LANGUAGES.map((lang) => (
-          <option key={lang.code} value={lang.code} className="bg-white dark:bg-gray-800">
-            {lang.nativeName}
-          </option>
-        ))}
-      </select>
+    <div className="language-selector relative">
+      <div className="flex items-center">
+        <select
+          value={currentLocale}
+          onChange={(e) => changeLanguage(e.target.value)}
+          className="text-xs bg-transparent border-0 rounded px-2 py-1 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none cursor-pointer appearance-none pr-6"
+          title="Select language / Dil seç / Tañla til / Вибрати мову"
+        >
+          {LANGUAGES.map((lang) => (
+            <option key={lang.code} value={lang.code} className="bg-white dark:bg-gray-800">
+              {lang.nativeName}
+            </option>
+          ))}
+        </select>
+        <span className="material-icons text-sm text-gray-500 dark:text-gray-400 absolute right-0 pointer-events-none">
+          arrow_drop_down
+        </span>
+      </div>
     </div>
   )
 }

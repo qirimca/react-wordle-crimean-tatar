@@ -30,7 +30,7 @@ export const DATEPICKER_CHOOSE_TEXT = strings.DATEPICKER_CHOOSE_TEXT
 export const DATEPICKER_TODAY_TEXT = strings.DATEPICKER_TODAY_TEXT
 export const ARCHIVE_GAMEDATE_TEXT = strings.ARCHIVE_GAMEDATE_TEXT
 
-// Legacy exports for migration
+// Legacy exports for migration  
 export const MIGRATE_BUTTON_TEXT = 'Köçür'
-export const MIGRATE_DESCRIPTION_TEXT = 'Statistikalarıñızı yañı cihaza köçürmek için buragha tıqlañız.'
-export const TRANSFER_STATISTICS_TEXT = 'Statistikalarıñızı köçürüñüz'
+export const MIGRATE_DESCRIPTION_TEXT = 'Statistikalarıñıznı yañı cihazğa köçürmek içün munğa tıqlañız.'
+export const TRANSFER_STATISTICS_TEXT = 'Statistikalarıñıznı köçürüñüz'

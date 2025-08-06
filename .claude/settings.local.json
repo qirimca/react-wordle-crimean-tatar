@@ -25,7 +25,8 @@
       "WebFetch(domain:github.com)",
       "mcp__kapture__show",
       "Bash(git commit:*)",
-      "Bash(git rebase:*)"
+      "Bash(git rebase:*)",
+      "Bash(git pull:*)"
     ],
     "deny": []
   }

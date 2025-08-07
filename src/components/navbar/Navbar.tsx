@@ -40,14 +40,12 @@ export const Navbar = ({
           )}
         </div>
         <div className="flex-1 flex justify-center px-2">
-          <div className="grow dark:text-white">
-            <h1 className="flex flex-col sm:flex-row items-center sm:items-baseline text-lg sm:text-xl font-bold heading text-center">
-              <span className="font-bold">Wordle</span>
-              <div className="flex items-center text-sm sm:text-base font-normal sm:ml-2">
-                <span>{strings.BY_TEXT}</span>
-                <span className="font-bold ml-1">QIRI'M YOUNG</span>
-              </div>
-            </h1>
+          <div className="text-center dark:text-white">
+            <h1 className="text-lg sm:text-xl font-bold heading">Wordle</h1>
+            <div className="text-xs sm:text-sm font-normal -mt-1">
+              <span>{strings.BY_TEXT}</span>
+              <span className="font-bold">QIRI'M YOUNG</span>
+            </div>
           </div>
         </div>
         <div className="right-icons flex justify-end items-center w-40 sm:w-44">

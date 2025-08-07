@@ -35,6 +35,13 @@ html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark 
   --color-absent: #85787b; /* Сірий для відсутніх літер */
 }
 
+/* Висококонтрастна тема */
+.high-contrast {
+  --color-correct: #FF6B35; /* Яскравий помаранчевий для правильних */
+  --color-present: #00B4D8; /* Яскравий блакитний для неправильної позиції */
+  --color-absent: #2D3748; /* Темно-сірий для відсутніх */
+}
+
 .key-absent {
   background-color: var(--color-absent) !important;
 }

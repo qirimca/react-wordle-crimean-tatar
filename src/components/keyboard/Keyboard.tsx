@@ -41,7 +41,7 @@ export const Keyboard = ({
       } else if (e.code === 'Backspace') {
         onDelete()
       } else {
-        let key = localeAwareUpperCase(e.key)
+        let key = e.key.toUpperCase()
         
         // Позиційний мапінг українських літер на кримськотатарські (за розташуванням на клавіатурі)
         // QWERTY: Q W E R T Y U I O P
@@ -64,13 +64,13 @@ export const Keyboard = ({
           key = 'Ü'
         } else if (e.code === 'Semicolon') { // ; -> Ş
           key = 'Ş'
-        } else if (e.code === 'Quote') { // ' -> İ (кримськотатарське I з крапкою)
+        } else if (e.code === 'Quote') { // ' -> İ (турецьке I з крапкою)
           key = 'İ'
         } else if (e.code === 'Comma') { // , -> Ö
           key = 'Ö'
         } else if (e.code === 'Period') { // . -> Ç
           key = 'Ç'
-        } else if (key === 'I') { // Англійська I -> кримськотатарська I без крапки
+        } else if (e.code === 'KeyI') { // Клавіша I -> кримськотатарське I без крапки
           key = 'I'
         } else if (ukrainianPositionalMapping[key]) {
           key = ukrainianPositionalMapping[key]

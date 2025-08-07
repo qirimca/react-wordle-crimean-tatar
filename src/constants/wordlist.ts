@@ -44,7 +44,6 @@ export const WORDS = [
   'yürek',
   'çeşit',
   'aydın',
-  'qısqa',
   'tatlı',
   'kitap',
   'qarar',

@@ -1,6 +1,6 @@
 export const VALID_GUESSES = [
   // Додаткові варіанти з İ та I для правильної роботи
-  'eydİn', 'eydin', 'qısqa', 'qisqa', 
+  'eydİn', 'qısqa', 
   'aadeş',
   'aadil',
   'aadim',
@@ -13199,7 +13199,6 @@ export const VALID_GUESSES = [
   'eydel',
   'eydge',
   'eydim',
-  'eydin',
   'eydis',
   'eydiñ',
   'eydli',
@@ -32834,7 +32833,6 @@ export const VALID_GUESSES = [
   'qısam',
   'qısar',
   'qısma',
-  'qısqa',
   'qısqı',
   'qıssa',
   'qıstı',

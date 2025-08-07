@@ -24,39 +24,38 @@ export const Navbar = ({
 }: Props) => {
   const strings = getLocalizedStrings()
   return (
-    <div className="navbar">
-      <div className="navbar-content px-5 short:h-auto">
-        <div className="flex w-16 sm:w-20">
-          <InformationCircleIcon
-            className="h-6 w-6 cursor-pointer dark:stroke-white"
-            onClick={() => setIsInfoModalOpen(true)}
-          />
-          {ENABLE_ARCHIVED_GAMES && (
-            <CalendarIcon
-              className="ml-3 h-6 w-6 cursor-pointer dark:stroke-white"
-              onClick={() => setIsDatePickerModalOpen(true)}
-            />
-          )}
-        </div>
-        <div className="flex-1 flex justify-center px-2">
-          <div className="text-center dark:text-white">
-            <h1 className="text-lg sm:text-xl font-bold heading">Wordle</h1>
-            <div className="text-xs sm:text-sm font-normal -mt-1">
-              <span>{strings.BY_TEXT}</span>
-              <span className="font-bold">QIRI'M YOUNG</span>
-            </div>
+    <div className="navbar mb-8">
+      <div className="flex w-80 mx-auto items-center">
+        <div className="ml-2.5 grow dark:text-white">
+          <h1 className="flex items-baseline text-xl grow font-bold heading">
+            <span>Wordle</span>
+            <span className="ml-2 px-2 py-0.5 text-xs font-normal bg-white text-gray-800 dark:bg-gray-700 dark:text-white rounded-full border border-gray-300 dark:border-gray-500">
+              Beta
+            </span>
+          </h1>
+          <div className="text-sm">
+            <span>{strings.BY_TEXT} </span>
+            <span className="font-bold">QIRI'M YOUNG</span>
           </div>
         </div>
-        <div className="right-icons flex justify-end items-center w-16 sm:w-20">
-          <ChartBarIcon
+        <InformationCircleIcon
+          className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+          onClick={() => setIsInfoModalOpen(true)}
+        />
+        <ChartBarIcon
+          className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+          onClick={() => setIsStatsModalOpen(true)}
+        />
+        <CogIcon
+          className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+          onClick={() => setIsSettingsModalOpen(true)}
+        />
+        {ENABLE_ARCHIVED_GAMES && (
+          <CalendarIcon
             className="h-6 w-6 cursor-pointer dark:stroke-white"
-            onClick={() => setIsStatsModalOpen(true)}
+            onClick={() => setIsDatePickerModalOpen(true)}
           />
-          <CogIcon
-            className="ml-3 h-6 w-6 cursor-pointer dark:stroke-white"
-            onClick={() => setIsSettingsModalOpen(true)}
-          />
-        </div>
+        )}
       </div>
     </div>
   )

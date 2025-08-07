@@ -39,6 +39,14 @@ export interface LocaleStrings {
   // Settings Modal
   SETTINGS_TITLE: string
   TRANSFER_STATS_TEXT: string
+  HARD_MODE_TEXT: string
+  DARK_MODE_TEXT: string
+  HIGH_CONTRAST_MODE_TEXT: string
+  // Transfer Stats Modal
+  TRANSFER_INSTRUCTIONS_TEXT: string
+  THIS_IS_MY_TEXT: string
+  OLD_DEVICE_TEXT: string
+  NEW_DEVICE_TEXT: string
 }
 
 export const LOCALE_CRH: LocaleStrings = {
@@ -82,6 +90,14 @@ export const LOCALE_CRH: LocaleStrings = {
   // Settings Modal
   SETTINGS_TITLE: 'Ayarlar',
   TRANSFER_STATS_TEXT: 'Statistikalarıñıznı köçür',
+  HARD_MODE_TEXT: 'Çetin Rejim',
+  DARK_MODE_TEXT: 'Qarañqı Rejim',
+  HIGH_CONTRAST_MODE_TEXT: 'Yüksek Kontrast Rejimi',
+  // Transfer Stats Modal
+  TRANSFER_INSTRUCTIONS_TEXT: 'Eski cihazıñızdan köçürme kodunı kopyalañız ve yañı cihazga yapıştırıñız.',
+  THIS_IS_MY_TEXT: 'Bu menim:',
+  OLD_DEVICE_TEXT: 'eski cihaz',
+  NEW_DEVICE_TEXT: 'yañı cihaz',
 }
 
 export const LOCALE_EN: LocaleStrings = {
@@ -125,6 +141,14 @@ export const LOCALE_EN: LocaleStrings = {
   // Settings Modal
   SETTINGS_TITLE: 'Settings',
   TRANSFER_STATS_TEXT: 'Transfer your statistics',
+  HARD_MODE_TEXT: 'Hard Mode',
+  DARK_MODE_TEXT: 'Dark Mode',
+  HIGH_CONTRAST_MODE_TEXT: 'High Contrast Mode',
+  // Transfer Stats Modal
+  TRANSFER_INSTRUCTIONS_TEXT: 'Copy the migration code on your old device and paste into the input on the new device.',
+  THIS_IS_MY_TEXT: 'This is my:',
+  OLD_DEVICE_TEXT: 'old device',
+  NEW_DEVICE_TEXT: 'new device',
 }
 
 export const LOCALE_TR: LocaleStrings = {
@@ -168,6 +192,14 @@ export const LOCALE_TR: LocaleStrings = {
   // Settings Modal
   SETTINGS_TITLE: 'Ayarlar',
   TRANSFER_STATS_TEXT: 'İstatistiklerinizi aktarın',
+  HARD_MODE_TEXT: 'Zor Mod',
+  DARK_MODE_TEXT: 'Karanlık Mod',
+  HIGH_CONTRAST_MODE_TEXT: 'Yüksek Kontrast Modu',
+  // Transfer Stats Modal
+  TRANSFER_INSTRUCTIONS_TEXT: 'Eski cihazınızdaki geçiş kodunu kopyalayın ve yeni cihazda girdiğe yapıştırın.',
+  THIS_IS_MY_TEXT: 'Bu benim:',
+  OLD_DEVICE_TEXT: 'eski cihaz',
+  NEW_DEVICE_TEXT: 'yeni cihaz',
 }
 
 export const LOCALE_UK: LocaleStrings = {
@@ -211,6 +243,14 @@ export const LOCALE_UK: LocaleStrings = {
   // Settings Modal
   SETTINGS_TITLE: 'Налаштування',
   TRANSFER_STATS_TEXT: 'Перенести вашу статистику',
+  HARD_MODE_TEXT: 'Складний режим',
+  DARK_MODE_TEXT: 'Темний режим',
+  HIGH_CONTRAST_MODE_TEXT: 'Високий контраст',
+  // Transfer Stats Modal
+  TRANSFER_INSTRUCTIONS_TEXT: 'Скопіюйте код міграції на вашому старому пристрої та вставте його на новому пристрої.',
+  THIS_IS_MY_TEXT: 'Це мій:',
+  OLD_DEVICE_TEXT: 'старий пристрій',
+  NEW_DEVICE_TEXT: 'новий пристрій',
 }
 
 export const getLocale = (): string => {

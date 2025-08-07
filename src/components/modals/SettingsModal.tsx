@@ -1,7 +1,3 @@
-import {
-  HARD_MODE_DESCRIPTION,
-  HIGH_CONTRAST_MODE_DESCRIPTION,
-} from '../../constants/strings'
 import { getLocalizedStrings } from '../../constants/locales'
 import { BaseModal } from './BaseModal'
 import { SettingsToggle } from './SettingsToggle'
@@ -33,21 +29,21 @@ export const SettingsModal = ({
     <BaseModal title={strings.SETTINGS_TITLE} isOpen={isOpen} handleClose={handleClose}>
       <div className="mt-2 flex flex-col divide-y">
         <SettingsToggle
-          settingName="Hard Mode"
+          settingName={strings.HARD_MODE_TEXT}
           flag={isHardMode}
           handleFlag={handleHardMode}
-          description={HARD_MODE_DESCRIPTION}
+          description={strings.HARD_MODE_DESCRIPTION}
         />
         <SettingsToggle
-          settingName="Dark Mode"
+          settingName={strings.DARK_MODE_TEXT}
           flag={isDarkMode}
           handleFlag={handleDarkMode}
         />
         <SettingsToggle
-          settingName="High Contrast Mode"
+          settingName={strings.HIGH_CONTRAST_MODE_TEXT}
           flag={isHighContrastMode}
           handleFlag={handleHighContrastMode}
-          description={HIGH_CONTRAST_MODE_DESCRIPTION}
+          description={strings.HIGH_CONTRAST_MODE_DESCRIPTION}
         />
       </div>
     </BaseModal>

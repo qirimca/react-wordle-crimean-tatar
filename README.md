@@ -20,7 +20,7 @@ A Crimean Tatar adaptation of the popular Wordle game, featuring full localizati
 - **Curated 5-letter word dictionary** - 148 target words, 32,000+ valid words
 - **QIRI'M YOUNG brand colors**:
   - 🟦 Blue (#99ceef) - Correct position
-  - 🟨 Yellow (#fde61a) - Wrong position  
+  - 🟠 Orange (#ff8c00) - Wrong position  
   - 🔳 Gray (#85787b) - Not in word
 - **Share functionality** - Custom emojis with game URL
 - **Statistics tracking** - Complete game analytics

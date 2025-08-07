@@ -53,13 +53,15 @@ export const LanguageSelector = ({ onLanguageChange }: Props = {}) => {
         >
           {currentLanguage.nativeName}
         </span>
-        <span 
-          className={`material-icons text-sm text-gray-500 dark:text-gray-400 ml-1 transition-transform duration-200 ${
+        <svg 
+          className={`w-4 h-4 text-gray-500 dark:text-gray-400 ml-1 transition-transform duration-200 ${
             isOpen ? 'rotate-180' : ''
           }`}
+          fill="currentColor"
+          viewBox="0 0 20 20"
         >
-          arrow_drop_down
-        </span>
+          <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+        </svg>
       </div>
       
       {isOpen && (

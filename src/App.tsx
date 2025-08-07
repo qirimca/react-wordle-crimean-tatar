@@ -193,6 +193,12 @@ function App() {
   }, [isGameWon, isGameLost, showSuccessAlert])
 
   const onChar = (value: string) => {
+    console.log(
+      '🔍 onChar received:',
+      value,
+      'code points:',
+      [...value].map((c) => c.codePointAt(0))
+    )
     if (
       unicodeLength(`${currentGuess}${value}`) <= solution.length &&
       guesses.length < MAX_CHALLENGES &&

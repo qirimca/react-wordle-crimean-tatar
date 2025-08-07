@@ -36,6 +36,7 @@ export interface LocaleStrings {
   INFO_MODAL_BETA_DESCRIPTION: string
   INFO_MODAL_SOURCE_CODE_TEXT: string
   INFO_MODAL_SOURCE_CODE_LINK: string
+  INFO_MODAL_KEYBOARD_HINT?: string
   // Settings Modal
   SETTINGS_TITLE: string
   TRANSFER_STATS_TEXT: string
@@ -92,6 +93,7 @@ export const LOCALE_CRH: LocaleStrings = {
   INFO_MODAL_BETA_DESCRIPTION: 'Bu çeviri otomatik oluşturuldu ve gönüllüler tarafından kontrol ediliyor. Hataları bildirmek ve çeviri iyileştirmelerine yardımcı olmak için bize ulaşın!',
   INFO_MODAL_SOURCE_CODE_TEXT: 'Bu epimiz bilgen ve sevgen söz tapuv oyunınıñ açıq menba versiyası',
   INFO_MODAL_SOURCE_CODE_LINK: 'kodqa şu yerde baqıñız',
+  INFO_MODAL_KEYBOARD_HINT: 'iOS qullanıcıları içün: Daha qolay giriş içün QırımKey klavyesini yükley bilesiñiz.',
   // Settings Modal
   SETTINGS_TITLE: 'Ayarlar',
   TRANSFER_STATS_TEXT: 'Statistikalarıñıznı köçür',
@@ -148,6 +150,7 @@ export const LOCALE_EN: LocaleStrings = {
   INFO_MODAL_BETA_DESCRIPTION: 'This translation was automatically generated and is being reviewed by volunteers. Please contact us to report errors and help improve translations!',
   INFO_MODAL_SOURCE_CODE_TEXT: 'This is an open source version of the word guessing game we all know and love',
   INFO_MODAL_SOURCE_CODE_LINK: 'check out the code here',
+  INFO_MODAL_KEYBOARD_HINT: 'For iOS users: You can download the QırımKey keyboard for easier input.',
   // Settings Modal
   SETTINGS_TITLE: 'Settings',
   TRANSFER_STATS_TEXT: 'Transfer your statistics',
@@ -204,6 +207,7 @@ export const LOCALE_TR: LocaleStrings = {
   INFO_MODAL_BETA_DESCRIPTION: 'Bu çeviri otomatik oluşturuldu ve gönüllüler tarafından kontrol ediliyor. Hataları bildirmek ve çeviri iyileştirmelerine yardım etmek için bize ulaşın!',
   INFO_MODAL_SOURCE_CODE_TEXT: 'Bu, hepimizin bildiği ve sevdiği kelime tahmin oyununun açık kaynak versiyonu',
   INFO_MODAL_SOURCE_CODE_LINK: 'koda buradan bakın',
+  INFO_MODAL_KEYBOARD_HINT: 'iOS kullanıcıları için: Daha kolay giriş için QırımKey klavyesini yükleyebilirsiniz.',
   // Settings Modal
   SETTINGS_TITLE: 'Ayarlar',
   TRANSFER_STATS_TEXT: 'İstatistiklerinizi aktarın',
@@ -260,6 +264,7 @@ export const LOCALE_UK: LocaleStrings = {
   INFO_MODAL_BETA_DESCRIPTION: 'Цей переклад був створений автоматично і перевіряється волонтерами. Будь ласка, звертайтеся до нас, щоб повідомити про помилки та покращити переклади!',
   INFO_MODAL_SOURCE_CODE_TEXT: 'Це відкритокодна версія гри вгадування слів, яку ми всі знаємо і любимо',
   INFO_MODAL_SOURCE_CODE_LINK: 'подивитися код тут',
+  INFO_MODAL_KEYBOARD_HINT: 'Для користувачів iOS: Ви можете завантажити клавіатуру QırımKey для зручнішого введення.',
   // Settings Modal
   SETTINGS_TITLE: 'Налаштування',
   TRANSFER_STATS_TEXT: 'Перенести вашу статистику',

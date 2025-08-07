@@ -8,7 +8,6 @@ import {
 import { ENABLE_ARCHIVED_GAMES } from '../../constants/settings'
 import { GAME_TITLE } from '../../constants/strings'
 import { getLocalizedStrings } from '../../constants/locales'
-import { LanguageSelector } from './LanguageSelector'
 
 type Props = {
   setIsInfoModalOpen: (value: boolean) => void
@@ -48,19 +47,17 @@ export const Navbar = ({
             </div>
           </div>
         </div>
-        <div className="right-icons flex justify-end items-center w-40 sm:w-44">
-          <LanguageSelector />
+        <div className="right-icons flex justify-end items-center w-16 sm:w-20">
           <ChartBarIcon
-            className="ml-2 h-5 w-5 sm:h-6 sm:w-6 cursor-pointer dark:stroke-white"
+            className="h-6 w-6 cursor-pointer dark:stroke-white"
             onClick={() => setIsStatsModalOpen(true)}
           />
           <CogIcon
-            className="ml-2 h-5 w-5 sm:h-6 sm:w-6 cursor-pointer dark:stroke-white"
+            className="ml-3 h-6 w-6 cursor-pointer dark:stroke-white"
             onClick={() => setIsSettingsModalOpen(true)}
           />
         </div>
       </div>
-      <hr></hr>
     </div>
   )
 }

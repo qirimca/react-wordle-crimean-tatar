@@ -42,6 +42,8 @@ export interface LocaleStrings {
   HARD_MODE_TEXT: string
   DARK_MODE_TEXT: string
   HIGH_CONTRAST_MODE_TEXT: string
+  HARD_MODE_DESCRIPTION: string
+  HIGH_CONTRAST_MODE_DESCRIPTION: string
   // Transfer Stats Modal
   TRANSFER_INSTRUCTIONS_TEXT: string
   THIS_IS_MY_TEXT: string
@@ -93,6 +95,8 @@ export const LOCALE_CRH: LocaleStrings = {
   HARD_MODE_TEXT: 'Çetin Rejim',
   DARK_MODE_TEXT: 'Qarañqı Rejim',
   HIGH_CONTRAST_MODE_TEXT: 'Yüksek Kontrast Rejimi',
+  HARD_MODE_DESCRIPTION: 'Açılğan işaretler sonrakı tahmislerde istimat etilmeli',
+  HIGH_CONTRAST_MODE_DESCRIPTION: 'Renk körüni için yaqşılaştırıluv',
   // Transfer Stats Modal
   TRANSFER_INSTRUCTIONS_TEXT: 'Eski cihazıñızdan köçürme kodunı kopyalañız ve yañı cihazga yapıştırıñız.',
   THIS_IS_MY_TEXT: 'Bu menim:',
@@ -144,6 +148,8 @@ export const LOCALE_EN: LocaleStrings = {
   HARD_MODE_TEXT: 'Hard Mode',
   DARK_MODE_TEXT: 'Dark Mode',
   HIGH_CONTRAST_MODE_TEXT: 'High Contrast Mode',
+  HARD_MODE_DESCRIPTION: 'Any revealed hints must be used in subsequent guesses',
+  HIGH_CONTRAST_MODE_DESCRIPTION: 'For improved color vision',
   // Transfer Stats Modal
   TRANSFER_INSTRUCTIONS_TEXT: 'Copy the migration code on your old device and paste into the input on the new device.',
   THIS_IS_MY_TEXT: 'This is my:',
@@ -195,6 +201,8 @@ export const LOCALE_TR: LocaleStrings = {
   HARD_MODE_TEXT: 'Zor Mod',
   DARK_MODE_TEXT: 'Karanlık Mod',
   HIGH_CONTRAST_MODE_TEXT: 'Yüksek Kontrast Modu',
+  HARD_MODE_DESCRIPTION: 'Açığa çıkan ipuçları sonraki tahminlerde kullanılmalıdır',
+  HIGH_CONTRAST_MODE_DESCRIPTION: 'Renk körlüğü için iyileştirme',
   // Transfer Stats Modal
   TRANSFER_INSTRUCTIONS_TEXT: 'Eski cihazınızdaki geçiş kodunu kopyalayın ve yeni cihazda girdiğe yapıştırın.',
   THIS_IS_MY_TEXT: 'Bu benim:',
@@ -246,6 +254,8 @@ export const LOCALE_UK: LocaleStrings = {
   HARD_MODE_TEXT: 'Складний режим',
   DARK_MODE_TEXT: 'Темний режим',
   HIGH_CONTRAST_MODE_TEXT: 'Високий контраст',
+  HARD_MODE_DESCRIPTION: 'Відкриті підказки мають використовуватися в наступних спробах',
+  HIGH_CONTRAST_MODE_DESCRIPTION: 'Для покращення сприйняття кольорів',
   // Transfer Stats Modal
   TRANSFER_INSTRUCTIONS_TEXT: 'Скопіюйте код міграції на вашому старому пристрої та вставте його на новому пристрої.',
   THIS_IS_MY_TEXT: 'Це мій:',

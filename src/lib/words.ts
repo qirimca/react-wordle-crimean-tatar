@@ -21,7 +21,19 @@ export const periodInDays = 1
 
 // Нормалізація Unicode для кримськотатарських літер
 const normalizeWord = (word: string) => {
-  return word.normalize('NFC').toLowerCase()
+  return word
+    .normalize('NFC')
+    // Спочатку правильно обробляємо турецькі/кримськотатарські літери
+    .replace(/İ/g, 'i')  // Турецьке велике İ -> маленьке i
+    .replace(/I/g, 'ı')  // Латинське велике I -> кримськотатарське ı 
+    .toLowerCase()
+    // Додаткова нормалізація для інших спецсимволів
+    .replace(/[ĞG]/gi, 'ğ')
+    .replace(/[ÇC]/gi, 'ç') 
+    .replace(/[ÑN]/gi, 'ñ')
+    .replace(/[ÖO]/gi, 'ö')
+    .replace(/[ÜU]/gi, 'ü')
+    .replace(/[ŞS]/gi, 'ş')
 }
 
 export const isWordInWordList = (word: string) => {
@@ -36,7 +48,7 @@ export const isWordInWordList = (word: string) => {
 }
 
 export const isWinningWord = (word: string) => {
-  return solution === word
+  return normalizeWord(solution) === normalizeWord(word)
 }
 
 // build a set of previously revealed letters - present and correct
@@ -87,15 +99,25 @@ export const unicodeLength = (word: string) => {
 }
 
 export const localeAwareLowerCase = (text: string) => {
+  // Спочатку нормалізуємо для кримськотатарської
+  const normalized = text
+    .replace(/İ/g, 'i')  
+    .replace(/I/g, 'ı')
+  
   return process.env.REACT_APP_LOCALE_STRING
-    ? text.toLocaleLowerCase(process.env.REACT_APP_LOCALE_STRING)
-    : text.toLowerCase()
+    ? normalized.toLocaleLowerCase(process.env.REACT_APP_LOCALE_STRING)
+    : normalized.toLowerCase()
 }
 
 export const localeAwareUpperCase = (text: string) => {
+  // Для відображення використовуємо турецький/кримськотатарський стандарт
+  const processed = text
+    .replace(/i/g, 'İ')  // маленьке i -> турецьке велике İ
+    .replace(/ı/g, 'I')  // кримськотатарське ı -> латинське велике I
+  
   return process.env.REACT_APP_LOCALE_STRING
-    ? text.toLocaleUpperCase(process.env.REACT_APP_LOCALE_STRING)
-    : text.toUpperCase()
+    ? processed.toLocaleUpperCase(process.env.REACT_APP_LOCALE_STRING)  
+    : processed.toUpperCase()
 }
 
 export const getLastGameDate = (today: Date) => {

@@ -1,6 +1,4 @@
 export const VALID_GUESSES = [
-  // Додаткові варіанти з İ та I для правильної роботи
-  'eydİn', 'eydin', 'qısqa', 'qisqa', 
   'aadeş',
   'aadil',
   'aadim',

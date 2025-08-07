@@ -21,7 +21,8 @@ export const periodInDays = 1
 
 // Нормалізація Unicode для кримськотатарських літер
 const normalizeWord = (word: string) => {
-  return word
+  const original = word
+  const result = word
     .normalize('NFC')
     // Спочатку правильно обробляємо турецькі/кримськотатарські літери
     .replace(/İ/g, 'i')  // Турецьке велике İ -> маленьке i
@@ -34,6 +35,13 @@ const normalizeWord = (word: string) => {
     .replace(/[ÖO]/gi, 'ö')
     .replace(/[ÜU]/gi, 'ü')
     .replace(/[ŞS]/gi, 'ş')
+  
+  // DEBUG: Логи для troubleshooting
+  if (original !== result) {
+    console.log(`🔍 Normalize: "${original}" -> "${result}"`)
+  }
+  
+  return result
 }
 
 export const isWordInWordList = (word: string) => {
@@ -41,10 +49,26 @@ export const isWordInWordList = (word: string) => {
   const normalizedWords = WORDS.map(w => normalizeWord(w))
   const normalizedGuesses = VALID_GUESSES.map(w => normalizeWord(w))
   
-  return (
-    normalizedWords.includes(normalizedWord) ||
-    normalizedGuesses.includes(normalizedWord)
-  )
+  const inWords = normalizedWords.includes(normalizedWord)
+  const inGuesses = normalizedGuesses.includes(normalizedWord)
+  const result = inWords || inGuesses
+  
+  // DEBUG: Логи для troubleshooting
+  console.log(`🔍 Word check: "${word}" -> "${normalizedWord}"`)
+  console.log(`  📖 In WORDS: ${inWords}`)
+  console.log(`  📝 In GUESSES: ${inGuesses}`)
+  console.log(`  ✅ Result: ${result}`)
+  
+  // Якщо слово qırım або vetan, покажи детальну інформацію
+  if (normalizedWord === 'qırım' || normalizedWord === 'vetan') {
+    console.log(`🔍 Special debug for "${normalizedWord}":`)
+    console.log('  First 10 normalized WORDS:', normalizedWords.slice(0, 10))
+    console.log('  First 10 normalized GUESSES:', normalizedGuesses.slice(0, 10))
+    console.log('  Contains in WORDS?', normalizedWords.includes(normalizedWord))
+    console.log('  Contains in GUESSES?', normalizedGuesses.includes(normalizedWord))
+  }
+  
+  return result
 }
 
 export const isWinningWord = (word: string) => {

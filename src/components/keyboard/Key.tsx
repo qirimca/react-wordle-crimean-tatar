@@ -24,6 +24,7 @@ export const Key = ({
   isRevealing,
 }: Props) => {
   const keyDelayMs = REVEAL_TIME_MS * solution.length
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const isHighContrast = getStoredIsHighContrastMode()
 
   const classes = classnames(

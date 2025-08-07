@@ -22,6 +22,7 @@ export const Cell = ({
   const isFilled = value && !isCompleted
   const shouldReveal = isRevealing && isCompleted
   const animationDelay = `${position * REVEAL_TIME_MS}ms`
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const isHighContrast = getStoredIsHighContrastMode()
 
   const classes = classnames(

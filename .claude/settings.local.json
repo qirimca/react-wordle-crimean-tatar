@@ -8,7 +8,12 @@
       "Bash(git commit:*)",
       "Bash(npm test:*)",
       "Bash(node:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(gh repo view:*)",
+      "Bash(gh run view:*)",
+      "WebFetch(domain:pagespeed.web.dev)"
     ],
     "deny": []
   }

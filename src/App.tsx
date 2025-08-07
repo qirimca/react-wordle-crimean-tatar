@@ -3,17 +3,12 @@ import './App.css'
 import { ClockIcon } from '@heroicons/react/outline'
 import { format } from 'date-fns'
 import { default as GraphemeSplitter } from 'grapheme-splitter'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, lazy, Suspense } from 'react'
 import Div100vh from 'react-div-100vh'
 
 import { AlertContainer } from './components/alerts/AlertContainer'
 import { Grid } from './components/grid/Grid'
 import { Keyboard } from './components/keyboard/Keyboard'
-import { DatePickerModal } from './components/modals/DatePickerModal'
-import { InfoModal } from './components/modals/InfoModal'
-import { MigrateStatsModal } from './components/modals/MigrateStatsModal'
-import { SettingsModal } from './components/modals/SettingsModal'
-import { StatsModal } from './components/modals/StatsModal'
 import { Navbar } from './components/navbar/Navbar'
 import {
   DATE_LOCALE,
@@ -53,6 +48,13 @@ import {
   solutionGameDate,
   unicodeLength,
 } from './lib/words'
+
+// Lazy load modal components for better performance
+const DatePickerModal = lazy(() => import('./components/modals/DatePickerModal').then(module => ({ default: module.DatePickerModal })))
+const InfoModal = lazy(() => import('./components/modals/InfoModal').then(module => ({ default: module.InfoModal })))
+const MigrateStatsModal = lazy(() => import('./components/modals/MigrateStatsModal').then(module => ({ default: module.MigrateStatsModal })))
+const SettingsModal = lazy(() => import('./components/modals/SettingsModal').then(module => ({ default: module.SettingsModal })))
+const StatsModal = lazy(() => import('./components/modals/StatsModal').then(module => ({ default: module.StatsModal })))
 
 function App() {
   const isLatestGame = getIsLatestGame()
@@ -318,60 +320,62 @@ function App() {
             guesses={guesses}
             isRevealing={isRevealing}
           />
-          <InfoModal
-            isOpen={isInfoModalOpen}
-            handleClose={() => {
-              setIsInfoModalOpen(false)
-              localStorage.setItem('infoModalOpen', 'false')
-            }}
-          />
-          <StatsModal
-            isOpen={isStatsModalOpen}
-            handleClose={() => setIsStatsModalOpen(false)}
-            solution={solution}
-            guesses={guesses}
-            gameStats={stats}
-            isLatestGame={isLatestGame}
-            isGameLost={isGameLost}
-            isGameWon={isGameWon}
-            handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
-            handleShareFailure={() =>
-              showErrorAlert(SHARE_FAILURE_TEXT, {
-                durationMs: LONG_ALERT_TIME_MS,
-              })
-            }
-            handleMigrateStatsButton={() => {
-              setIsStatsModalOpen(false)
-              setIsMigrateStatsModalOpen(true)
-            }}
-            isHardMode={isHardMode}
-            isDarkMode={isDarkMode}
-            isHighContrastMode={isHighContrastMode}
-            numberOfGuessesMade={guesses.length}
-          />
-          <DatePickerModal
-            isOpen={isDatePickerModalOpen}
-            initialDate={solutionGameDate}
-            handleSelectDate={(d) => {
-              setIsDatePickerModalOpen(false)
-              setGameDate(d)
-            }}
-            handleClose={() => setIsDatePickerModalOpen(false)}
-          />
-          <MigrateStatsModal
-            isOpen={isMigrateStatsModalOpen}
-            handleClose={() => setIsMigrateStatsModalOpen(false)}
-          />
-          <SettingsModal
-            isOpen={isSettingsModalOpen}
-            handleClose={() => setIsSettingsModalOpen(false)}
-            isHardMode={isHardMode}
-            handleHardMode={handleHardMode}
-            isDarkMode={isDarkMode}
-            handleDarkMode={handleDarkMode}
-            isHighContrastMode={isHighContrastMode}
-            handleHighContrastMode={handleHighContrastMode}
-          />
+          <Suspense fallback={<div></div>}>
+            <InfoModal
+              isOpen={isInfoModalOpen}
+              handleClose={() => {
+                setIsInfoModalOpen(false)
+                localStorage.setItem('infoModalOpen', 'false')
+              }}
+            />
+            <StatsModal
+              isOpen={isStatsModalOpen}
+              handleClose={() => setIsStatsModalOpen(false)}
+              solution={solution}
+              guesses={guesses}
+              gameStats={stats}
+              isLatestGame={isLatestGame}
+              isGameLost={isGameLost}
+              isGameWon={isGameWon}
+              handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+              handleShareFailure={() =>
+                showErrorAlert(SHARE_FAILURE_TEXT, {
+                  durationMs: LONG_ALERT_TIME_MS,
+                })
+              }
+              handleMigrateStatsButton={() => {
+                setIsStatsModalOpen(false)
+                setIsMigrateStatsModalOpen(true)
+              }}
+              isHardMode={isHardMode}
+              isDarkMode={isDarkMode}
+              isHighContrastMode={isHighContrastMode}
+              numberOfGuessesMade={guesses.length}
+            />
+            <DatePickerModal
+              isOpen={isDatePickerModalOpen}
+              initialDate={solutionGameDate}
+              handleSelectDate={(d) => {
+                setIsDatePickerModalOpen(false)
+                setGameDate(d)
+              }}
+              handleClose={() => setIsDatePickerModalOpen(false)}
+            />
+            <MigrateStatsModal
+              isOpen={isMigrateStatsModalOpen}
+              handleClose={() => setIsMigrateStatsModalOpen(false)}
+            />
+            <SettingsModal
+              isOpen={isSettingsModalOpen}
+              handleClose={() => setIsSettingsModalOpen(false)}
+              isHardMode={isHardMode}
+              handleHardMode={handleHardMode}
+              isDarkMode={isDarkMode}
+              handleDarkMode={handleDarkMode}
+              isHighContrastMode={isHighContrastMode}
+              handleHighContrastMode={handleHighContrastMode}
+            />
+          </Suspense>
           <AlertContainer />
         </div>
       </div>

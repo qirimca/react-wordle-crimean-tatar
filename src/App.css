@@ -2,6 +2,17 @@ html.dark {
   background-color: rgb(15, 23, 42);
 }
 
+/* Шрифти e-Ukraine для всього тексту */
+body, input, button, textarea, select {
+  font-family: 'e-Ukraine', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* e-Ukraine Head для заголовків */
+h1, h2, h3, h4, h5, h6, .heading {
+  font-family: 'e-Ukraine Head', 'e-Ukraine', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 600;
+}
+
 /* Кримськотатарський стиль кольорів з оригінальної гри */
 :root {
   --color-correct: #99ceef; /* Блакитний для правильних літер */

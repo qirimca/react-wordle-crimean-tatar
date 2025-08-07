@@ -43,6 +43,15 @@ export const Keyboard = ({
       } else {
         let key = localeAwareUpperCase(e.key)
         
+        // Маппінг українських літер на кримськотатарські
+        const ukrainianToCrimeanTatar: { [key: string]: string } = {
+          'А': 'A', 'Б': 'B', 'В': 'V', 'Г': 'G', 'Ґ': 'G', 'Д': 'D', 'Е': 'E', 'Є': 'E', 
+          'Ж': 'J', 'З': 'Z', 'И': 'I', 'І': 'İ', 'Ї': 'İ', 'Й': 'Y', 'К': 'K', 'Л': 'L', 
+          'М': 'M', 'Н': 'N', 'О': 'O', 'П': 'P', 'Р': 'R', 'С': 'S', 'Т': 'T', 'У': 'U', 
+          'Ф': 'F', 'Х': 'H', 'Ц': 'C', 'Ч': 'Ç', 'Ш': 'Ş', 'Щ': 'Ş', 'Ь': '', 'Ю': 'Ü', 
+          'Я': 'Â'
+        }
+        
         // Спеціальні маппінги для англійської клавіатури
         if (e.code === 'Slash') { // / -> Â
           key = 'Â'
@@ -62,6 +71,8 @@ export const Keyboard = ({
           key = 'Ç'
         } else if (key === 'I') { // Англійська I -> кримськотатарська I без крапки
           key = 'I'
+        } else if (ukrainianToCrimeanTatar[key]) {
+          key = ukrainianToCrimeanTatar[key]
         }
         
         // Crimean Tatar alphabet letters

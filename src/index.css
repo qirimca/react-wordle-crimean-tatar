@@ -142,11 +142,11 @@ svg.cursor-pointer:hover {
   50.1% {
     background-color: var(--present-cell-bg-color);
     border-color: var(--present-cell-bg-color);
-    color: #85787b;
+    color: white;
   }
   100% {
     transform: rotateX(180deg);
-    color: #85787b;
+    color: white;
   }
 }
 

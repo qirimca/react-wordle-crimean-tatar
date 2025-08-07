@@ -1,7 +1,7 @@
 # 🎯 Qırımtatar Söz Tapuv Oyunı / Crimean Tatar Wordle
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://wordle.qirimca.org)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](LICENSE)
 [![Crimean Tatar](https://img.shields.io/badge/Language-Qırımtatar-red.svg)](https://www.instagram.com/qirim.young/)
 
 A Crimean Tatar adaptation of the popular Wordle game, featuring full localization and optimized keyboard layout for the Crimean Tatar language.
@@ -91,7 +91,14 @@ GitHub Pages automatically deploys from the `master` branch via GitHub Actions.
 
 ## 📄 License
 
-MIT License - Free for personal and commercial use.
+This project is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](LICENSE).
+
+**Requirements for use:**
+- ✅ Attribution to QIRI'M YOUNG Organization required
+- ✅ Attribution to original Wordle creators required  
+- ✅ Link to this repository required
+- ✅ Derivative works must use the same license
+- ✅ Commercial use allowed with proper attribution
 
 ---
 

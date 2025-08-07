@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/qirimca/react-wordle-crimean-tatar/issues"
   },
-  "homepage": "https://qirimca.github.io/react-wordle-crimean-tatar/",
+  "homepage": "https://wordle.qirimca.org/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

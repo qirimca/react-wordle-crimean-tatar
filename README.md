@@ -1,12 +1,12 @@
 # 🎯 Qırımtatar Söz Tapuv Oyunı / Crimean Tatar Wordle
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://qirimca.github.io/react-wordle-crimean-tatar/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://wordle.qirimca.org)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Crimean Tatar](https://img.shields.io/badge/Language-Qırımtatar-red.svg)](https://qirimca.org)
+[![Crimean Tatar](https://img.shields.io/badge/Language-Qırımtatar-red.svg)](https://www.instagram.com/qirim.young/)
 
 A Crimean Tatar adaptation of the popular Wordle game, featuring full localization and optimized keyboard layout for the Crimean Tatar language.
 
-**🎮 [Play Now / Şindi Oynan!](https://qirimca.github.io/react-wordle-crimean-tatar/)**
+**🎮 [Play Now / Şindi Oynan!](https://wordle.qirimca.org)**
 
 ## 🌟 Features
 
@@ -78,16 +78,16 @@ npm run deploy
 
 ## 🌐 Deployment
 
-**Live at:** [qirimca.github.io/react-wordle-crimean-tatar](https://qirimca.github.io/react-wordle-crimean-tatar/)
+**Live at:** [wordle.qirimca.org](https://wordle.qirimca.org)
 
 GitHub Pages automatically deploys from the `master` branch via GitHub Actions.
 
 ## 🙏 Credits
 
 - **Original Wordle** - Josh Wardle (NYT)
-- **React Implementation** - [@cwackerfuss](https://github.com/cwackerfuss/react-wordle)  
+- **React Implementation** - Hannah Park & contributors
 - **Docker Version** - [@modem7](https://github.com/modem7/react-wordle)
-- **Crimean Tatar Adaptation** - [QIRI'M YOUNG](https://qirimca.org)
+- **Crimean Tatar Adaptation** - [QIRI'M YOUNG](https://www.instagram.com/qirim.young/)
 
 ## 📄 License
 

@@ -50,6 +50,8 @@ export interface LocaleStrings {
   // Migration Stats
   MIGRATE_BUTTON_TEXT: string
   MIGRATE_DESCRIPTION_TEXT: string
+  // Navbar
+  BY_TEXT: string
 }
 
 export const LOCALE_CRH: LocaleStrings = {
@@ -104,6 +106,8 @@ export const LOCALE_CRH: LocaleStrings = {
   // Migration Stats
   MIGRATE_BUTTON_TEXT: 'Köçür',
   MIGRATE_DESCRIPTION_TEXT: 'Statistikalarıñıznı yañı cihazğa köçürmek içün munğa tıqlañız.',
+  // Navbar
+  BY_TEXT: ' tarafından ',
 }
 
 export const LOCALE_EN: LocaleStrings = {
@@ -158,6 +162,8 @@ export const LOCALE_EN: LocaleStrings = {
   // Migration Stats
   MIGRATE_BUTTON_TEXT: 'Transfer',
   MIGRATE_DESCRIPTION_TEXT: 'Click here to transfer your statistics to a new device.',
+  // Navbar
+  BY_TEXT: ' by ',
 }
 
 export const LOCALE_TR: LocaleStrings = {
@@ -212,6 +218,8 @@ export const LOCALE_TR: LocaleStrings = {
   // Migration Stats
   MIGRATE_BUTTON_TEXT: 'Aktar',
   MIGRATE_DESCRIPTION_TEXT: 'İstatistiklerinizi yeni cihaza aktarmak için buraya tıklayın.',
+  // Navbar
+  BY_TEXT: ' tarafından ',
 }
 
 export const LOCALE_UK: LocaleStrings = {
@@ -248,8 +256,8 @@ export const LOCALE_UK: LocaleStrings = {
   INFO_MODAL_CORRECT_EXPLANATION: 'Літера K є у слові і на правильному місці.',
   INFO_MODAL_PRESENT_EXPLANATION: 'Літера L є у слові, але на неправильному місці.',
   INFO_MODAL_ABSENT_EXPLANATION: 'Літери E немає в слові.',
-  INFO_MODAL_BETA_TITLE: '⚠️ Бета версія',
-  INFO_MODAL_BETA_DESCRIPTION: 'Цей переклад був створений автоматично і перевіряється волонтерами. Будь ласка, звертайтеся до нас, щоб повідомити про помилки!',
+  INFO_MODAL_BETA_TITLE: '⚠️ Бета версія', 
+  INFO_MODAL_BETA_DESCRIPTION: 'Цей переклад був створений автоматично і перевіряється волонтерами. Будь ласка, звертайтеся до нас, щоб повідомити про помилки та покращити переклади!',
   INFO_MODAL_SOURCE_CODE_TEXT: 'Це відкритокодна версія гри вгадування слів, яку ми всі знаємо і любимо',
   INFO_MODAL_SOURCE_CODE_LINK: 'подивитися код тут',
   // Settings Modal
@@ -266,6 +274,8 @@ export const LOCALE_UK: LocaleStrings = {
   // Migration Stats
   MIGRATE_BUTTON_TEXT: 'Перенести',
   MIGRATE_DESCRIPTION_TEXT: 'Натисніть тут, щоб перенести статистику на новий пристрій.',
+  // Navbar
+  BY_TEXT: ' від ',
 }
 
 export const getLocale = (): string => {

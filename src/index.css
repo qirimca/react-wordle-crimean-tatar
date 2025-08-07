@@ -5,24 +5,30 @@
 :root {
   --animation-speed: 1000ms;
   --animation-speed-fast: 250ms;
-  --default-cell-bg-color: theme('colors.white');
-  --default-cell-border-color: #85787b;
-  --default-cell-text-color: #85787b;
-  --absent-cell-bg-color: #85787b;
-  --correct-cell-bg-color: #99ceef;
-  --present-cell-bg-color: #FF955B;
+  --qirim-bg-light: #F5F5F5;
+  --qirim-text-dark: #52494B;
+  --qirim-primary: #99CEEF;
+  --qirim-accent: #FF955B;
+  --qirim-gray: #85787B;
+  --default-cell-bg-color: var(--qirim-bg-light);
+  --default-cell-border-color: var(--qirim-text-dark);
+  --default-cell-text-color: var(--qirim-text-dark);
+  --absent-cell-bg-color: var(--qirim-gray);
+  --correct-cell-bg-color: var(--qirim-primary);
+  --present-cell-bg-color: var(--qirim-accent);
 }
 
 .dark {
-  --default-cell-bg-color: theme('colors.slate.900');
-  --default-cell-border-color: theme('colors.white');
-  --default-cell-text-color: theme('colors.white');
-  --absent-cell-bg-color: #85787b;
+  --default-cell-bg-color: var(--qirim-text-dark);
+  --default-cell-border-color: var(--qirim-bg-light);
+  --default-cell-text-color: var(--qirim-bg-light);
+  --absent-cell-bg-color: var(--qirim-gray);
 }
 
 .high-contrast {
-  --correct-cell-bg-color: theme('colors.orange.400');
-  --present-cell-bg-color: theme('colors.cyan.400');
+  --correct-cell-bg-color: #FF6B35;
+  --present-cell-bg-color: #00B4D8;
+  --absent-cell-bg-color: #2D3748;
 }
 
 .cell-fill-animation {

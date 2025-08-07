@@ -37,7 +37,7 @@ export const LanguageSelector = () => {
     >
       <div className="flex items-center cursor-pointer px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
         <span 
-          className="text-xs text-gray-700 dark:text-gray-300 select-none"
+          className="text-xs text-gray-700 dark:text-gray-300 select-none w-20 text-center"
           style={{ fontFamily: 'e-Ukraine, system-ui, sans-serif' }}
           title="Select language / Вибрати мову"
         >

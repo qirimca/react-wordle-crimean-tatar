@@ -61,23 +61,22 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
 
       <div className="mt-6 p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border border-yellow-200 dark:border-yellow-700">
         <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium mb-2">
-          ⚠️ Beta sürüm / Beta version / Бета версія
+          {strings.INFO_MODAL_BETA_TITLE}
         </p>
         <p className="text-xs text-yellow-700 dark:text-yellow-300">
-          Bu çeviri otomatik oluşturuldu ve gönüllüler tarafından kontrol ediliyor. 
-          Hataları bildirmek ve çeviri iyileştirmelerine yardımcı olmak için bize ulaşın!
+          {strings.INFO_MODAL_BETA_DESCRIPTION}
         </p>
       </div>
 
       <p className="mt-4 text-sm italic text-gray-500 dark:text-gray-300">
-        Bu epimiz bilgen ve sevgen söz tapuv oyunınıñ açıq menba versiyası -{' '}
+        {strings.INFO_MODAL_SOURCE_CODE_TEXT} -{' '}
         <a
           href="https://github.com/qirimca/react-wordle-crimean-tatar"
           className="font-bold underline"
           target="_blank"
           rel="noopener noreferrer"
         >
-          kodqa şu yerde baqıñız
+          {strings.INFO_MODAL_SOURCE_CODE_LINK}
         </a>{' '}
       </p>
     </BaseModal>

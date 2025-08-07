@@ -27,7 +27,7 @@ export const Navbar = ({
   return (
     <div className="navbar">
       <div className="navbar-content px-5 short:h-auto">
-        <div className="flex w-20">
+        <div className="flex w-16 sm:w-20">
           <InformationCircleIcon
             className="h-6 w-6 cursor-pointer dark:stroke-white"
             onClick={() => setIsInfoModalOpen(true)}
@@ -39,21 +39,21 @@ export const Navbar = ({
             />
           )}
         </div>
-        <div className="flex-1 flex justify-center">
-          <p className="text-xl dark:text-white heading">
+        <div className="flex-1 flex justify-center px-2">
+          <p className="text-lg sm:text-xl dark:text-white heading text-center">
             <span className="font-bold">Wordle</span>
-            <span className="font-normal">{strings.BY_TEXT}</span>
-            <span className="font-bold">QIRI'M YOUNG</span>
+            <span className="font-normal hidden sm:inline">{strings.BY_TEXT}</span>
+            <span className="font-bold hidden sm:inline">QIRI'M YOUNG</span>
           </p>
         </div>
-        <div className="right-icons flex justify-end w-32">
+        <div className="right-icons flex justify-end items-center w-28 sm:w-32">
           <LanguageSelector />
           <ChartBarIcon
-            className="mr-3 ml-3 h-6 w-6 cursor-pointer dark:stroke-white"
+            className="ml-2 h-5 w-5 sm:h-6 sm:w-6 cursor-pointer dark:stroke-white"
             onClick={() => setIsStatsModalOpen(true)}
           />
           <CogIcon
-            className="h-6 w-6 cursor-pointer dark:stroke-white"
+            className="ml-2 h-5 w-5 sm:h-6 sm:w-6 cursor-pointer dark:stroke-white"
             onClick={() => setIsSettingsModalOpen(true)}
           />
         </div>

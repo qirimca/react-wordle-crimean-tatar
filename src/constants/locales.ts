@@ -107,7 +107,7 @@ export const LOCALE_CRH: LocaleStrings = {
   MIGRATE_BUTTON_TEXT: 'Köçür',
   MIGRATE_DESCRIPTION_TEXT: 'Statistikalarıñıznı yañı cihazğa köçürmek içün munğa tıqlañız.',
   // Navbar
-  BY_TEXT: ' tarafından ',
+  BY_TEXT: ' by ',
 }
 
 export const LOCALE_EN: LocaleStrings = {

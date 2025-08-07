@@ -47,6 +47,9 @@ export interface LocaleStrings {
   THIS_IS_MY_TEXT: string
   OLD_DEVICE_TEXT: string
   NEW_DEVICE_TEXT: string
+  // Migration Stats
+  MIGRATE_BUTTON_TEXT: string
+  MIGRATE_DESCRIPTION_TEXT: string
 }
 
 export const LOCALE_CRH: LocaleStrings = {
@@ -98,6 +101,9 @@ export const LOCALE_CRH: LocaleStrings = {
   THIS_IS_MY_TEXT: 'Bu menim:',
   OLD_DEVICE_TEXT: 'eski cihaz',
   NEW_DEVICE_TEXT: 'yañı cihaz',
+  // Migration Stats
+  MIGRATE_BUTTON_TEXT: 'Köçür',
+  MIGRATE_DESCRIPTION_TEXT: 'Statistikalarıñıznı yañı cihazğa köçürmek içün munğa tıqlañız.',
 }
 
 export const LOCALE_EN: LocaleStrings = {
@@ -149,6 +155,9 @@ export const LOCALE_EN: LocaleStrings = {
   THIS_IS_MY_TEXT: 'This is my:',
   OLD_DEVICE_TEXT: 'old device',
   NEW_DEVICE_TEXT: 'new device',
+  // Migration Stats
+  MIGRATE_BUTTON_TEXT: 'Transfer',
+  MIGRATE_DESCRIPTION_TEXT: 'Click here to transfer your statistics to a new device.',
 }
 
 export const LOCALE_TR: LocaleStrings = {
@@ -200,6 +209,9 @@ export const LOCALE_TR: LocaleStrings = {
   THIS_IS_MY_TEXT: 'Bu benim:',
   OLD_DEVICE_TEXT: 'eski cihaz',
   NEW_DEVICE_TEXT: 'yeni cihaz',
+  // Migration Stats
+  MIGRATE_BUTTON_TEXT: 'Aktar',
+  MIGRATE_DESCRIPTION_TEXT: 'İstatistiklerinizi yeni cihaza aktarmak için buraya tıklayın.',
 }
 
 export const LOCALE_UK: LocaleStrings = {
@@ -251,6 +263,9 @@ export const LOCALE_UK: LocaleStrings = {
   THIS_IS_MY_TEXT: 'Це мій:',
   OLD_DEVICE_TEXT: 'старий пристрій',
   NEW_DEVICE_TEXT: 'новий пристрій',
+  // Migration Stats
+  MIGRATE_BUTTON_TEXT: 'Перенести',
+  MIGRATE_DESCRIPTION_TEXT: 'Натисніть тут, щоб перенести статистику на новий пристрій.',
 }
 
 export const getLocale = (): string => {

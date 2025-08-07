@@ -24,9 +24,13 @@ export const SettingsModal = ({
   handleHighContrastMode,
 }: Props) => {
   const strings = getLocalizedStrings()
-  
+
   return (
-    <BaseModal title={strings.SETTINGS_TITLE} isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal
+      title={strings.SETTINGS_TITLE}
+      isOpen={isOpen}
+      handleClose={handleClose}
+    >
       <div className="mt-2 flex flex-col divide-y">
         <SettingsToggle
           settingName={strings.HARD_MODE_TEXT}

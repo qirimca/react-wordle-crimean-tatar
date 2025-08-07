@@ -5,11 +5,11 @@
 :root {
   --animation-speed: 1000ms;
   --animation-speed-fast: 250ms;
-  --qirim-bg-light: #F5F5F5;
-  --qirim-text-dark: #52494B;
-  --qirim-primary: #99CEEF;
-  --qirim-accent: #FF955B;
-  --qirim-gray: #85787B;
+  --qirim-bg-light: #f5f5f5;
+  --qirim-text-dark: #52494b;
+  --qirim-primary: #99ceef;
+  --qirim-accent: #ff955b;
+  --qirim-gray: #85787b;
   --default-cell-bg-color: var(--qirim-bg-light);
   --default-cell-border-color: var(--qirim-text-dark);
   --default-cell-text-color: var(--qirim-text-dark);
@@ -26,9 +26,9 @@
 }
 
 .high-contrast {
-  --correct-cell-bg-color: #FF6B35;
-  --present-cell-bg-color: #00B4D8;
-  --absent-cell-bg-color: #2D3748;
+  --correct-cell-bg-color: #ff6b35;
+  --present-cell-bg-color: #00b4d8;
+  --absent-cell-bg-color: #2d3748;
 }
 
 .cell-fill-animation {
@@ -221,11 +221,11 @@ svg.cursor-pointer:hover {
 }
 
 .react-datepicker-right {
-  @apply absolute right-0 left-auto top-11 transform-none !important;
+  @apply absolute left-auto right-0 top-11 transform-none !important;
 }
 
 .react-datepicker__portal {
-  @apply absolute top-12 right-0 z-10 w-72 transform-none rounded border-2 border-gray-200 bg-white px-3 py-2 text-sm shadow;
+  @apply absolute right-0 top-12 z-10 w-72 transform-none rounded border-2 border-gray-200 bg-white px-3 py-2 text-sm shadow;
 }
 
 .react-datepicker__month-container {

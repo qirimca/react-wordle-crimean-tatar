@@ -50,17 +50,37 @@ import {
 } from './lib/words'
 
 // Lazy load modal components for better performance
-const DatePickerModal = lazy(() => import('./components/modals/DatePickerModal').then(module => ({ default: module.DatePickerModal })))
-const InfoModal = lazy(() => import('./components/modals/InfoModal').then(module => ({ default: module.InfoModal })))
-const MigrateStatsModal = lazy(() => import('./components/modals/MigrateStatsModal').then(module => ({ default: module.MigrateStatsModal })))
-const SettingsModal = lazy(() => import('./components/modals/SettingsModal').then(module => ({ default: module.SettingsModal })))
-const StatsModal = lazy(() => import('./components/modals/StatsModal').then(module => ({ default: module.StatsModal })))
+const DatePickerModal = lazy(() =>
+  import('./components/modals/DatePickerModal').then((module) => ({
+    default: module.DatePickerModal,
+  })),
+)
+const InfoModal = lazy(() =>
+  import('./components/modals/InfoModal').then((module) => ({
+    default: module.InfoModal,
+  })),
+)
+const MigrateStatsModal = lazy(() =>
+  import('./components/modals/MigrateStatsModal').then((module) => ({
+    default: module.MigrateStatsModal,
+  })),
+)
+const SettingsModal = lazy(() =>
+  import('./components/modals/SettingsModal').then((module) => ({
+    default: module.SettingsModal,
+  })),
+)
+const StatsModal = lazy(() =>
+  import('./components/modals/StatsModal').then((module) => ({
+    default: module.StatsModal,
+  })),
+)
 
 function App() {
   const isLatestGame = getIsLatestGame()
   const gameDate = getGameDate()
   const prefersDarkMode = window.matchMedia(
-    '(prefers-color-scheme: dark)'
+    '(prefers-color-scheme: dark)',
   ).matches
 
   const { showError: showErrorAlert, showSuccess: showSuccessAlert } =
@@ -81,11 +101,11 @@ function App() {
     localStorage.getItem('theme')
       ? localStorage.getItem('theme') === 'dark'
       : prefersDarkMode
-      ? true
-      : false
+        ? true
+        : false,
   )
   const [isHighContrastMode, setIsHighContrastMode] = useState(
-    getStoredIsHighContrastMode()
+    getStoredIsHighContrastMode(),
   )
   const [isRevealing, setIsRevealing] = useState(false)
   const [guesses, setGuesses] = useState<string[]>(() => {
@@ -111,7 +131,7 @@ function App() {
   const [isHardMode, setIsHardMode] = useState(
     localStorage.getItem('gameMode')
       ? localStorage.getItem('gameMode') === 'hard'
-      : false
+      : false,
   )
 
   useEffect(() => {
@@ -188,9 +208,12 @@ function App() {
     }
 
     if (isGameLost) {
-      setTimeout(() => {
-        setIsStatsModalOpen(true)
-      }, (solution.length + 1) * REVEAL_TIME_MS)
+      setTimeout(
+        () => {
+          setIsStatsModalOpen(true)
+        },
+        (solution.length + 1) * REVEAL_TIME_MS,
+      )
     }
   }, [isGameWon, isGameLost, showSuccessAlert])
 
@@ -199,7 +222,7 @@ function App() {
       '🔍 onChar received:',
       value,
       'code points:',
-      [...value].map((c) => c.codePointAt(0))
+      [...value].map((c) => c.codePointAt(0)),
     )
     if (
       unicodeLength(`${currentGuess}${value}`) <= solution.length &&
@@ -212,7 +235,7 @@ function App() {
 
   const onDelete = () => {
     setCurrentGuess(
-      new GraphemeSplitter().splitGraphemes(currentGuess).slice(0, -1).join('')
+      new GraphemeSplitter().splitGraphemes(currentGuess).slice(0, -1).join(''),
     )
   }
 
@@ -302,7 +325,7 @@ function App() {
           </div>
         )}
 
-        <div className="mx-auto flex w-full grow flex-col px-1 pt-2 pb-8 sm:px-6 md:max-w-7xl lg:px-8 short:pb-2 short:pt-2">
+        <div className="mx-auto flex w-full grow flex-col px-1 pb-8 pt-2 sm:px-6 md:max-w-7xl lg:px-8 short:pb-2 short:pt-2">
           <div className="flex grow flex-col justify-center pb-6 short:pb-2">
             <Grid
               solution={solution}
@@ -337,7 +360,9 @@ function App() {
               isLatestGame={isLatestGame}
               isGameLost={isGameLost}
               isGameWon={isGameWon}
-              handleShareToClipboard={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+              handleShareToClipboard={() =>
+                showSuccessAlert(GAME_COPIED_MESSAGE)
+              }
               handleShareFailure={() =>
                 showErrorAlert(SHARE_FAILURE_TEXT, {
                   durationMs: LONG_ALERT_TIME_MS,

@@ -24,11 +24,11 @@ export const Navbar = ({
   const strings = getLocalizedStrings()
   return (
     <div className="navbar mb-8">
-      <div className="flex w-80 mx-auto items-center">
+      <div className="mx-auto flex w-80 items-center">
         <div className="ml-2.5 grow dark:text-white">
-          <h1 className="flex items-baseline text-xl grow font-bold heading">
+          <h1 className="heading flex grow items-baseline text-xl font-bold">
             <span>Wordle</span>
-            <span className="ml-2 px-2 py-0.5 text-xs font-normal bg-white text-gray-800 dark:bg-gray-700 dark:text-white rounded-full border border-gray-300 dark:border-gray-500">
+            <span className="ml-2 rounded-full border border-gray-300 bg-white px-2 py-0.5 text-xs font-normal text-gray-800 dark:border-gray-500 dark:bg-gray-700 dark:text-white">
               Beta
             </span>
           </h1>
@@ -38,15 +38,15 @@ export const Navbar = ({
           </div>
         </div>
         <InformationCircleIcon
-          className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+          className="mr-2 h-6 w-6 cursor-pointer dark:stroke-white"
           onClick={() => setIsInfoModalOpen(true)}
         />
         <ChartBarIcon
-          className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+          className="mr-3 h-6 w-6 cursor-pointer dark:stroke-white"
           onClick={() => setIsStatsModalOpen(true)}
         />
         <CogIcon
-          className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+          className="mr-3 h-6 w-6 cursor-pointer dark:stroke-white"
           onClick={() => setIsSettingsModalOpen(true)}
         />
         {ENABLE_ARCHIVED_GAMES && (

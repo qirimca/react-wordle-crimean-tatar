@@ -18,7 +18,7 @@ export const shareStatus = (
   isDarkMode: boolean,
   isHighContrastMode: boolean,
   handleShareToClipboard: () => void,
-  handleShareFailure: () => void
+  handleShareFailure: () => void,
 ) => {
   const textToShare =
     `${GAME_TITLE} ${solutionIndex} ${
@@ -27,7 +27,7 @@ export const shareStatus = (
     generateEmojiGrid(
       solution,
       guesses,
-      getEmojiTiles(isDarkMode, isHighContrastMode)
+      getEmojiTiles(isDarkMode, isHighContrastMode),
     ) +
     '\n\nwordle.qirimca.org'
 
@@ -63,7 +63,7 @@ export const shareStatus = (
 export const generateEmojiGrid = (
   solution: string,
   guesses: string[],
-  tiles: string[]
+  tiles: string[],
 ) => {
   return guesses
     .map((guess) => {

@@ -11,17 +11,21 @@ type Props = {
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   const strings = getLocalizedStrings()
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
-  
+
   return (
-    <BaseModal 
-      title={strings.INFO_MODAL_TITLE} 
-      isOpen={isOpen} 
+    <BaseModal
+      title={strings.INFO_MODAL_TITLE}
+      isOpen={isOpen}
       handleClose={handleClose}
-      topLeftComponent={<LanguageSelector onLanguageChange={() => {
-        if (isOpen) {
-          localStorage.setItem('infoModalOpen', 'true')
-        }
-      }} />}
+      topLeftComponent={
+        <LanguageSelector
+          onLanguageChange={() => {
+            if (isOpen) {
+              localStorage.setItem('infoModalOpen', 'true')
+            }
+          }}
+        />
+      }
     >
       <p className="text-sm text-gray-500 dark:text-gray-300">
         {strings.INFO_MODAL_DESCRIPTION}
@@ -40,7 +44,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="P" isCompleted={true} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-{strings.INFO_MODAL_CORRECT_EXPLANATION}
+        {strings.INFO_MODAL_CORRECT_EXPLANATION}
       </p>
 
       <div className="mb-1 mt-4 flex justify-center">
@@ -56,7 +60,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="M" isCompleted={true} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-{strings.INFO_MODAL_PRESENT_EXPLANATION}
+        {strings.INFO_MODAL_PRESENT_EXPLANATION}
       </p>
 
       <div className="mb-1 mt-4 flex justify-center">
@@ -67,11 +71,11 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="L" isCompleted={true} />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-{strings.INFO_MODAL_ABSENT_EXPLANATION}
+        {strings.INFO_MODAL_ABSENT_EXPLANATION}
       </p>
 
       {isIOS && strings.INFO_MODAL_KEYBOARD_HINT && (
-        <div className="mt-6 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-700">
+        <div className="mt-6 rounded-lg border border-blue-200 bg-blue-50 p-3 dark:border-blue-700 dark:bg-blue-900/20">
           <p className="text-xs text-blue-700 dark:text-blue-300">
             {strings.INFO_MODAL_KEYBOARD_HINT}{' '}
             <a
@@ -86,8 +90,8 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         </div>
       )}
 
-      <div className="mt-6 p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border border-yellow-200 dark:border-yellow-700">
-        <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium mb-2">
+      <div className="mt-6 rounded-lg border border-yellow-200 bg-yellow-50 p-3 dark:border-yellow-700 dark:bg-yellow-900/20">
+        <p className="mb-2 text-sm font-medium text-yellow-800 dark:text-yellow-200">
           {strings.INFO_MODAL_BETA_TITLE}
         </p>
         <p className="text-xs text-yellow-700 dark:text-yellow-300">

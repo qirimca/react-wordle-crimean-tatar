@@ -13,7 +13,13 @@
       "Bash(git pull:*)",
       "Bash(gh repo view:*)",
       "Bash(gh run view:*)",
-      "WebFetch(domain:pagespeed.web.dev)"
+      "WebFetch(domain:pagespeed.web.dev)",
+      "Bash(npm install)",
+      "Bash(del package-lock.json)",
+      "Bash(rmdir:*)",
+      "Bash(rm:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run fix:*)"
     ],
     "deny": []
   }

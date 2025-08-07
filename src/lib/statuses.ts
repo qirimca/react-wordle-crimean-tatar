@@ -4,7 +4,7 @@ export type CharStatus = 'absent' | 'present' | 'correct'
 
 export const getStatuses = (
   solution: string,
-  guesses: string[]
+  guesses: string[],
 ): { [key: string]: CharStatus } => {
   const charObj: { [key: string]: CharStatus } = {}
   const splitSolution = unicodeSplit(solution)
@@ -33,7 +33,7 @@ export const getStatuses = (
 
 export const getGuessStatuses = (
   solution: string,
-  guess: string
+  guess: string,
 ): CharStatus[] => {
   const splitSolution = unicodeSplit(solution)
   const splitGuess = unicodeSplit(guess)
@@ -62,7 +62,7 @@ export const getGuessStatuses = (
 
     // now we are left with "present"s
     const indexOfPresentChar = splitSolution.findIndex(
-      (x, index) => x === letter && !solutionCharsTaken[index]
+      (x, index) => x === letter && !solutionCharsTaken[index],
     )
 
     if (indexOfPresentChar > -1) {

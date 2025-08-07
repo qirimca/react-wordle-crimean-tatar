@@ -41,42 +41,109 @@ export const Keyboard = ({
         onDelete()
       } else {
         let key = e.key.toUpperCase()
-        
+
         // Позиційний мапінг українських літер на кримськотатарські (за розташуванням на клавіатурі)
         // QWERTY: Q W E R T Y U I O P
         // УКР:    Й Ц У К Е Н Г Ш Щ З
         // CRH:    Q W E R T Y U I O P
         const ukrainianPositionalMapping: { [key: string]: string } = {
-          'Й': 'Q', 'Ц': 'W', 'У': 'E', 'К': 'R', 'Е': 'T', 'Н': 'Y', 'Г': 'U', 'Ш': 'I', 'Щ': 'O', 'З': 'P',
-          'Ф': 'A', 'І': 'S', 'В': 'D', 'А': 'F', 'П': 'G', 'Р': 'H', 'О': 'J', 'Л': 'K', 'Д': 'L',
-          'Я': 'Z', 'Ч': 'X', 'С': 'C', 'М': 'V', 'И': 'B', 'Т': 'N', 'Ь': 'M'
+          Й: 'Q',
+          Ц: 'W',
+          У: 'E',
+          К: 'R',
+          Е: 'T',
+          Н: 'Y',
+          Г: 'U',
+          Ш: 'I',
+          Щ: 'O',
+          З: 'P',
+          Ф: 'A',
+          І: 'S',
+          В: 'D',
+          А: 'F',
+          П: 'G',
+          Р: 'H',
+          О: 'J',
+          Л: 'K',
+          Д: 'L',
+          Я: 'Z',
+          Ч: 'X',
+          С: 'C',
+          М: 'V',
+          И: 'B',
+          Т: 'N',
+          Ь: 'M',
         }
-        
+
         // Спеціальні маппінги для англійської клавіатури
-        if (e.code === 'Slash') { // / -> Â
+        if (e.code === 'Slash') {
+          // / -> Â
           key = 'Â'
-        } else if (e.code === 'Backslash') { // \ -> Ñ  
+        } else if (e.code === 'Backslash') {
+          // \ -> Ñ
           key = 'Ñ'
-        } else if (e.code === 'BracketLeft') { // [ -> Ğ
+        } else if (e.code === 'BracketLeft') {
+          // [ -> Ğ
           key = 'Ğ'
-        } else if (e.code === 'BracketRight') { // ] -> Ü
+        } else if (e.code === 'BracketRight') {
+          // ] -> Ü
           key = 'Ü'
-        } else if (e.code === 'Semicolon') { // ; -> Ş
+        } else if (e.code === 'Semicolon') {
+          // ; -> Ş
           key = 'Ş'
-        } else if (e.code === 'Quote') { // ' -> İ (турецьке I з крапкою)
+        } else if (e.code === 'Quote') {
+          // ' -> İ (турецьке I з крапкою)
           key = 'İ'
-        } else if (e.code === 'Comma') { // , -> Ö
+        } else if (e.code === 'Comma') {
+          // , -> Ö
           key = 'Ö'
-        } else if (e.code === 'Period') { // . -> Ç
+        } else if (e.code === 'Period') {
+          // . -> Ç
           key = 'Ç'
-        } else if (e.code === 'KeyI') { // Клавіша I -> кримськотатарське I без крапки
+        } else if (e.code === 'KeyI') {
+          // Клавіша I -> кримськотатарське I без крапки
           key = 'I'
         } else if (ukrainianPositionalMapping[key]) {
           key = ukrainianPositionalMapping[key]
         }
-        
+
         // Crimean Tatar alphabet letters
-        const validChars = ['A', 'B', 'C', 'Ç', 'D', 'E', 'F', 'G', 'Ğ', 'H', 'I', 'İ', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'Ö', 'P', 'Q', 'R', 'S', 'Ş', 'T', 'U', 'Ü', 'V', 'W', 'X', 'Y', 'Z', 'Â']
+        const validChars = [
+          'A',
+          'B',
+          'C',
+          'Ç',
+          'D',
+          'E',
+          'F',
+          'G',
+          'Ğ',
+          'H',
+          'I',
+          'İ',
+          'J',
+          'K',
+          'L',
+          'M',
+          'N',
+          'Ñ',
+          'O',
+          'Ö',
+          'P',
+          'Q',
+          'R',
+          'S',
+          'Ş',
+          'T',
+          'U',
+          'Ü',
+          'V',
+          'W',
+          'X',
+          'Y',
+          'Z',
+          'Â',
+        ]
         if (key.length === 1 && validChars.includes(key)) {
           onChar(key)
         }
@@ -91,29 +158,33 @@ export const Keyboard = ({
   return (
     <div>
       <div className="mb-1 flex justify-center">
-        {['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'Ğ', 'Ü'].map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'Ğ', 'Ü'].map(
+          (key) => (
+            <Key
+              value={key}
+              key={key}
+              onClick={onClick}
+              status={charStatuses[key]}
+              isRevealing={isRevealing}
+            />
+          ),
+        )}
         <Key width={65.4} value="DELETE" onClick={onClick}>
           {DELETE_TEXT}
         </Key>
       </div>
       <div className="mb-1 flex justify-center">
-        {['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Ş', 'İ', 'Ñ'].map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Ş', 'İ', 'Ñ'].map(
+          (key) => (
+            <Key
+              value={key}
+              key={key}
+              onClick={onClick}
+              status={charStatuses[key]}
+              isRevealing={isRevealing}
+            />
+          ),
+        )}
         <Key width={65.4} value="ENTER" onClick={onClick}>
           {ENTER_TEXT}
         </Key>

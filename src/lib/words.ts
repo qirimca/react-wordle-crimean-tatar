@@ -21,26 +21,28 @@ export const periodInDays = 1
 
 // Нормалізація Unicode для кримськотатарських літер
 const normalizeWord = (word: string) => {
-  return word
-    .normalize('NFC')
-    // Спочатку правильно обробляємо турецькі/кримськотатарські літери
-    .replace(/İ/g, 'i')  // Турецьке велике İ -> маленьке i
-    .replace(/I/g, 'ı')  // Латинське велике I -> кримськотатарське ı 
-    .toLowerCase()
-    // Додаткова нормалізація для інших спецсимволів
-    .replace(/[ĞG]/gi, 'ğ')
-    .replace(/[ÇC]/gi, 'ç') 
-    .replace(/[ÑN]/gi, 'ñ')
-    .replace(/[ÖO]/gi, 'ö')
-    .replace(/[ÜU]/gi, 'ü')
-    .replace(/[ŞS]/gi, 'ş')
+  return (
+    word
+      .normalize('NFC')
+      // Спочатку правильно обробляємо турецькі/кримськотатарські літери
+      .replace(/İ/g, 'i') // Турецьке велике İ -> маленьке i
+      .replace(/I/g, 'ı') // Латинське велике I -> кримськотатарське ı
+      .toLowerCase()
+      // Додаткова нормалізація для інших спецсимволів
+      .replace(/[ĞG]/gi, 'ğ')
+      .replace(/[ÇC]/gi, 'ç')
+      .replace(/[ÑN]/gi, 'ñ')
+      .replace(/[ÖO]/gi, 'ö')
+      .replace(/[ÜU]/gi, 'ü')
+      .replace(/[ŞS]/gi, 'ş')
+  )
 }
 
 export const isWordInWordList = (word: string) => {
   const normalizedWord = normalizeWord(word)
-  const normalizedWords = WORDS.map(w => normalizeWord(w))
-  const normalizedGuesses = VALID_GUESSES.map(w => normalizeWord(w))
-  
+  const normalizedWords = WORDS.map((w) => normalizeWord(w))
+  const normalizedGuesses = VALID_GUESSES.map((w) => normalizeWord(w))
+
   return (
     normalizedWords.includes(normalizedWord) ||
     normalizedGuesses.includes(normalizedWord)
@@ -100,10 +102,8 @@ export const unicodeLength = (word: string) => {
 
 export const localeAwareLowerCase = (text: string) => {
   // Спочатку нормалізуємо для кримськотатарської
-  const normalized = text
-    .replace(/İ/g, 'i')  
-    .replace(/I/g, 'ı')
-  
+  const normalized = text.replace(/İ/g, 'i').replace(/I/g, 'ı')
+
   return process.env.REACT_APP_LOCALE_STRING
     ? normalized.toLocaleLowerCase(process.env.REACT_APP_LOCALE_STRING)
     : normalized.toLowerCase()
@@ -112,11 +112,11 @@ export const localeAwareLowerCase = (text: string) => {
 export const localeAwareUpperCase = (text: string) => {
   // Для відображення використовуємо турецький/кримськотатарський стандарт
   const processed = text
-    .replace(/i/g, 'İ')  // маленьке i -> турецьке велике İ
-    .replace(/ı/g, 'I')  // кримськотатарське ı -> латинське велике I
-  
+    .replace(/i/g, 'İ') // маленьке i -> турецьке велике İ
+    .replace(/ı/g, 'I') // кримськотатарське ı -> латинське велике I
+
   return process.env.REACT_APP_LOCALE_STRING
-    ? processed.toLocaleUpperCase(process.env.REACT_APP_LOCALE_STRING)  
+    ? processed.toLocaleUpperCase(process.env.REACT_APP_LOCALE_STRING)
     : processed.toUpperCase()
 }
 

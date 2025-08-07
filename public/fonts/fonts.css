@@ -1,11 +1,10 @@
-/* e-Ukraine Font Family - Performance Optimized */
+/* e-Ukraine Font Family */
 @font-face {
   font-family: 'e-Ukraine';
   src: url('./e-Ukraine-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F, U+0180-024F, U+0400-04FF;
 }
 
 @font-face {
@@ -14,7 +13,6 @@
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F, U+0180-024F, U+0400-04FF;
 }
 
 @font-face {
@@ -23,7 +21,6 @@
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F, U+0180-024F, U+0400-04FF;
 }
 
 @font-face {
@@ -32,17 +29,15 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F, U+0180-024F, U+0400-04FF;
 }
 
-/* e-Ukraine Head Font Family - Performance Optimized */
+/* e-Ukraine Head Font Family */
 @font-face {
   font-family: 'e-Ukraine Head';
   src: url('./e-UkraineHead-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F, U+0180-024F, U+0400-04FF;
 }
 
 @font-face {
@@ -51,7 +46,6 @@
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F, U+0180-024F, U+0400-04FF;
 }
 
 @font-face {
@@ -60,5 +54,4 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F, U+0180-024F, U+0400-04FF;
 }

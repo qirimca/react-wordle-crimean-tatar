@@ -10,6 +10,7 @@ type Props = {
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   const strings = getLocalizedStrings()
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
   
   return (
     <BaseModal 
@@ -68,6 +69,22 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       <p className="text-sm text-gray-500 dark:text-gray-300">
 {strings.INFO_MODAL_ABSENT_EXPLANATION}
       </p>
+
+      {isIOS && strings.INFO_MODAL_KEYBOARD_HINT && (
+        <div className="mt-6 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-700">
+          <p className="text-xs text-blue-700 dark:text-blue-300">
+            {strings.INFO_MODAL_KEYBOARD_HINT}{' '}
+            <a
+              href="https://apps.apple.com/ua/app/qırımkey/id6739430313"
+              className="font-bold underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              QırımKey
+            </a>
+          </p>
+        </div>
+      )}
 
       <div className="mt-6 p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border border-yellow-200 dark:border-yellow-700">
         <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium mb-2">

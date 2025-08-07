@@ -7,9 +7,10 @@ type Props = {
   children: React.ReactNode
   isOpen: boolean
   handleClose: () => void
+  topLeftComponent?: React.ReactNode
 }
 
-export const BaseModal = ({ title, children, isOpen, handleClose }: Props) => {
+export const BaseModal = ({ title, children, isOpen, handleClose, topLeftComponent }: Props) => {
   return (
     <Transition.Root show={isOpen} as={Fragment}>
       <Dialog
@@ -39,6 +40,11 @@ export const BaseModal = ({ title, children, isOpen, handleClose }: Props) => {
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
             <div className="inline-block transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left align-bottom shadow-xl transition-all dark:bg-gray-800 sm:my-8 sm:w-full sm:max-w-sm sm:p-6 sm:align-middle">
+              {topLeftComponent && (
+                <div className="absolute left-4 top-4">
+                  {topLeftComponent}
+                </div>
+              )}
               <button
                 onClick={() => handleClose()}
                 tabIndex={0}

@@ -65,7 +65,10 @@ function App() {
     useAlert()
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
-  const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
+  const [isInfoModalOpen, setIsInfoModalOpen] = useState(() => {
+    const storedValue = localStorage.getItem('infoModalOpen')
+    return storedValue === 'true'
+  })
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [isDatePickerModalOpen, setIsDatePickerModalOpen] = useState(false)
   const [isMigrateStatsModalOpen, setIsMigrateStatsModalOpen] = useState(false)
@@ -115,6 +118,7 @@ function App() {
     if (!loadGameStateFromLocalStorage(true)) {
       setTimeout(() => {
         setIsInfoModalOpen(true)
+        localStorage.setItem('infoModalOpen', 'true')
       }, WELCOME_INFO_MODAL_MS)
     }
   })
@@ -310,7 +314,10 @@ function App() {
           />
           <InfoModal
             isOpen={isInfoModalOpen}
-            handleClose={() => setIsInfoModalOpen(false)}
+            handleClose={() => {
+              setIsInfoModalOpen(false)
+              localStorage.setItem('infoModalOpen', 'false')
+            }}
           />
           <StatsModal
             isOpen={isStatsModalOpen}

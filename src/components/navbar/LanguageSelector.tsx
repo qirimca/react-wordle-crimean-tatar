@@ -13,7 +13,11 @@ const LANGUAGES: Language[] = [
   { code: 'uk', name: 'Ukrainian', nativeName: 'Українська' },
 ]
 
-export const LanguageSelector = () => {
+interface Props {
+  onLanguageChange?: () => void
+}
+
+export const LanguageSelector = ({ onLanguageChange }: Props = {}) => {
   const currentLocale = getLocale()
   const [isOpen, setIsOpen] = useState(false)
 
@@ -26,6 +30,12 @@ export const LanguageSelector = () => {
     } else {
       url.searchParams.set('lang', langCode)
     }
+    
+    // Викликати callback перед перезавантаженням
+    if (onLanguageChange) {
+      onLanguageChange()
+    }
+    
     window.location.href = url.toString()
   }
 

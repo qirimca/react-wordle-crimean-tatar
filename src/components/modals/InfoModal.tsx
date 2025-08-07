@@ -12,15 +12,19 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
   const strings = getLocalizedStrings()
   
   return (
-    <BaseModal title={strings.INFO_MODAL_TITLE} isOpen={isOpen} handleClose={handleClose}>
-      <div className="flex justify-between items-start mb-4">
-        <p className="text-sm text-gray-500 dark:text-gray-300 flex-1 mr-4">
-          {strings.INFO_MODAL_DESCRIPTION}
-        </p>
-        <div className="flex-shrink-0">
-          <LanguageSelector />
-        </div>
-      </div>
+    <BaseModal 
+      title={strings.INFO_MODAL_TITLE} 
+      isOpen={isOpen} 
+      handleClose={handleClose}
+      topLeftComponent={<LanguageSelector onLanguageChange={() => {
+        if (isOpen) {
+          localStorage.setItem('infoModalOpen', 'true')
+        }
+      }} />}
+    >
+      <p className="text-sm text-gray-500 dark:text-gray-300">
+        {strings.INFO_MODAL_DESCRIPTION}
+      </p>
 
       <div className="mb-1 mt-4 flex justify-center">
         <Cell

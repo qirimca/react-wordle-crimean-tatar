@@ -95,18 +95,18 @@ svg.cursor-pointer:hover {
     color: var(--default-cell-text-color);
   }
   50% {
-    transform: rotateX(-90deg);
+    transform: rotateX(90deg);
     background-color: var(--default-cell-bg-color);
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
   }
-  50.1% {
+  50% {
     background-color: var(--absent-cell-bg-color);
     border-color: var(--absent-cell-bg-color);
     color: white;
   }
   100% {
-    transform: rotateX(-180deg);
+    transform: rotateX(0deg);
     background-color: var(--absent-cell-bg-color);
     border-color: var(--absent-cell-bg-color);
     color: white;
@@ -121,18 +121,18 @@ svg.cursor-pointer:hover {
     color: var(--default-cell-text-color);
   }
   50% {
-    transform: rotateX(-90deg);
+    transform: rotateX(90deg);
     background-color: var(--default-cell-bg-color);
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
   }
-  50.1% {
+  50% {
     background-color: var(--correct-cell-bg-color);
     border-color: var(--correct-cell-bg-color);
     color: white;
   }
   100% {
-    transform: rotateX(-180deg);
+    transform: rotateX(0deg);
     background-color: var(--correct-cell-bg-color);
     border-color: var(--correct-cell-bg-color);
     color: white;
@@ -147,18 +147,18 @@ svg.cursor-pointer:hover {
     color: var(--default-cell-text-color);
   }
   50% {
-    transform: rotateX(-90deg);
+    transform: rotateX(90deg);
     background-color: var(--default-cell-bg-color);
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
   }
-  50.1% {
+  50% {
     background-color: var(--present-cell-bg-color);
     border-color: var(--present-cell-bg-color);
     color: white;
   }
   100% {
-    transform: rotateX(-180deg);
+    transform: rotateX(0deg);
     background-color: var(--present-cell-bg-color);
     border-color: var(--present-cell-bg-color);
     color: white;
@@ -171,7 +171,7 @@ svg.cursor-pointer:hover {
     transform: rotateX(0deg);
   }
   100% {
-    transform: rotateX(-180deg);
+    transform: rotateX(0deg);
   }
 }
 

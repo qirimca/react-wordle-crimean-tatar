@@ -34,7 +34,9 @@
       "Bash(npm run deploy:*)",
       "Bash(npx gh-pages:*)",
       "mcp__kapture__list_tabs",
-      "mcp__kapture__new_tab"
+      "mcp__kapture__new_tab",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:goroh.pp.ua)"
     ],
     "deny": []
   }

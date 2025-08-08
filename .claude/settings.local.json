@@ -30,7 +30,11 @@
       "Bash(cp:*)",
       "Bash(touch:*)",
       "Bash(git init:*)",
-      "Bash(npx prettier:*)"
+      "Bash(npx prettier:*)",
+      "Bash(npm run deploy:*)",
+      "Bash(npx gh-pages:*)",
+      "mcp__kapture__list_tabs",
+      "mcp__kapture__new_tab"
     ],
     "deny": []
   }

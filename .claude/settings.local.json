@@ -36,7 +36,8 @@
       "mcp__kapture__list_tabs",
       "mcp__kapture__new_tab",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:goroh.pp.ua)"
+      "WebFetch(domain:goroh.pp.ua)",
+      "Bash(npm start)"
     ],
     "deny": []
   }

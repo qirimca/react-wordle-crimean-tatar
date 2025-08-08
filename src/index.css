@@ -95,7 +95,6 @@ svg.cursor-pointer:hover {
     color: var(--default-cell-text-color);
   }
   50% {
-    transform: rotateX(90deg);
     background-color: var(--default-cell-bg-color);
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
@@ -106,9 +105,7 @@ svg.cursor-pointer:hover {
     color: white;
   }
   100% {
-    transform: rotateX(0deg);
-    background-color: var(--absent-cell-bg-color);
-    border-color: var(--absent-cell-bg-color);
+    transform: rotateX(180deg);
     color: white;
   }
 }
@@ -121,7 +118,6 @@ svg.cursor-pointer:hover {
     color: var(--default-cell-text-color);
   }
   50% {
-    transform: rotateX(90deg);
     background-color: var(--default-cell-bg-color);
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
@@ -132,9 +128,7 @@ svg.cursor-pointer:hover {
     color: white;
   }
   100% {
-    transform: rotateX(0deg);
-    background-color: var(--correct-cell-bg-color);
-    border-color: var(--correct-cell-bg-color);
+    transform: rotateX(180deg);
     color: white;
   }
 }
@@ -147,7 +141,6 @@ svg.cursor-pointer:hover {
     color: var(--default-cell-text-color);
   }
   50% {
-    transform: rotateX(90deg);
     background-color: var(--default-cell-bg-color);
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
@@ -158,9 +151,7 @@ svg.cursor-pointer:hover {
     color: white;
   }
   100% {
-    transform: rotateX(0deg);
-    background-color: var(--present-cell-bg-color);
-    border-color: var(--present-cell-bg-color);
+    transform: rotateX(180deg);
     color: white;
   }
 }
@@ -171,7 +162,7 @@ svg.cursor-pointer:hover {
     transform: rotateX(0deg);
   }
   100% {
-    transform: rotateX(0deg);
+    transform: rotateX(180deg);
   }
 }
 

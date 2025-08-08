@@ -85,18 +85,17 @@ html.dark .heading {
   background-color: var(--color-present) !important;
 }
 
-/* Only apply colors when not revealing */
-.cell-absent:not(.cell-reveal) {
+.cell-absent {
   background-color: var(--color-absent) !important;
   border-color: var(--color-absent) !important;
 }
 
-.cell-correct:not(.cell-reveal) {
+.cell-correct {
   background-color: var(--color-correct) !important;
   border-color: var(--color-correct) !important;
 }
 
-.cell-present:not(.cell-reveal) {
+.cell-present {
   background-color: var(--color-present) !important;
   border-color: var(--color-present) !important;
 }

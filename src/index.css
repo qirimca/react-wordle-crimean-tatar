@@ -100,7 +100,7 @@ svg.cursor-pointer:hover {
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
   }
-  50% {
+  50.1% {
     background-color: var(--absent-cell-bg-color);
     border-color: var(--absent-cell-bg-color);
     color: white;
@@ -126,7 +126,7 @@ svg.cursor-pointer:hover {
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
   }
-  50% {
+  50.1% {
     background-color: var(--correct-cell-bg-color);
     border-color: var(--correct-cell-bg-color);
     color: white;
@@ -152,7 +152,7 @@ svg.cursor-pointer:hover {
     border-color: var(--default-cell-border-color);
     color: var(--default-cell-text-color);
   }
-  50% {
+  50.1% {
     background-color: var(--present-cell-bg-color);
     border-color: var(--present-cell-bg-color);
     color: white;

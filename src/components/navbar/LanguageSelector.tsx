@@ -15,9 +15,13 @@ const LANGUAGES: Language[] = [
 
 interface Props {
   onLanguageChange?: () => void
+  autoFocus?: boolean
 }
 
-export const LanguageSelector = ({ onLanguageChange }: Props = {}) => {
+export const LanguageSelector = ({
+  onLanguageChange,
+  autoFocus,
+}: Props = {}) => {
   const currentLocale = getLocale()
   const [isOpen, setIsOpen] = useState(false)
 
@@ -46,11 +50,22 @@ export const LanguageSelector = ({ onLanguageChange }: Props = {}) => {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <div className="flex cursor-pointer items-center rounded px-2 py-1 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800">
+      <button
+        className="flex cursor-pointer items-center rounded px-2 py-1 transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 dark:hover:bg-gray-800"
+        autoFocus={autoFocus}
+        onClick={() => setIsOpen(!isOpen)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            setIsOpen(!isOpen)
+          }
+        }}
+        aria-expanded={isOpen}
+        aria-label="Select language / Вибрати мову"
+      >
         <span
           className="select-none text-center text-xs text-gray-700 dark:text-gray-300"
           style={{ fontFamily: 'e-Ukraine, system-ui, sans-serif' }}
-          title="Select language / Вибрати мову"
         >
           {currentLanguage.nativeName}
         </span>
@@ -67,7 +82,7 @@ export const LanguageSelector = ({ onLanguageChange }: Props = {}) => {
             clipRule="evenodd"
           />
         </svg>
-      </div>
+      </button>
 
       {isOpen && (
         <div

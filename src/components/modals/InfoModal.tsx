@@ -19,6 +19,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       handleClose={handleClose}
       topLeftComponent={
         <LanguageSelector
+          autoFocus={true}
           onLanguageChange={() => {
             if (isOpen) {
               localStorage.setItem('infoModalOpen', 'true')

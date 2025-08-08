@@ -19,7 +19,18 @@
       "Bash(rmdir:*)",
       "Bash(rm:*)",
       "Bash(npm run lint)",
-      "Bash(npm run fix:*)"
+      "Bash(npm run fix:*)",
+      "WebFetch(domain:support.google.com)",
+      "Bash(npx create-react-app:*)",
+      "Bash(npm create:*)",
+      "Bash(true)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss init:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(touch:*)",
+      "Bash(git init:*)",
+      "Bash(npx prettier:*)"
     ],
     "deny": []
   }

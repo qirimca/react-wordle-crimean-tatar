@@ -50,6 +50,7 @@ export const BaseModal = ({
                 onClick={() => handleClose()}
                 tabIndex={-1}
                 aria-pressed="false"
+                aria-label="Закрити"
                 className="absolute right-4 top-4 focus:outline-none"
               >
                 <XCircleIcon className="h-6 w-6 cursor-pointer dark:stroke-white" />

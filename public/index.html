@@ -92,28 +92,49 @@
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://plausible.io">
     <link rel="dns-prefetch" href="https://www.gstatic.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     
-    <!-- Preconnect to critical resources -->
+    <!-- Preconnect to critical resources with crossorigin -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Preload critical fonts with proper priorities -->
-    <link rel="preload" href="%PUBLIC_URL%/fonts/e-Ukraine-Regular.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="%PUBLIC_URL%/fonts/e-UkraineHead-Bold.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="%PUBLIC_URL%/fonts/e-Ukraine-Medium.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="%PUBLIC_URL%/fonts/e-UkraineHead-Regular.otf" as="font" type="font/otf" crossorigin>
     
-    <!-- Prefetch less critical fonts -->
+    <!-- Prefetch secondary fonts -->
     <link rel="prefetch" href="%PUBLIC_URL%/fonts/e-Ukraine-Bold.otf" as="font" type="font/otf" crossorigin>
+    <link rel="prefetch" href="%PUBLIC_URL%/fonts/e-UkraineHead-Bold.otf" as="font" type="font/otf" crossorigin>
+    <link rel="prefetch" href="%PUBLIC_URL%/fonts/e-Ukraine-Regular.otf" as="font" type="font/otf" crossorigin>
     
     <!-- Critical CSS - Load fonts with display swap for faster rendering -->
     <link href="%PUBLIC_URL%/fonts/fonts.css" rel="stylesheet">
     
-    <!-- Optimize font rendering -->
+    <!-- Critical CSS for above-the-fold content -->
     <style>
       /* Critical styles for above-the-fold content */
+      * {
+        box-sizing: border-box;
+      }
+      
       body {
+        margin: 0;
         font-family: 'e-Ukraine', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         font-display: swap;
+        background-color: #fff;
+        color: #1f2937;
+      }
+      
+      /* Dark mode support */
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #1f2937;
+          color: #f9fafb;
+        }
       }
       
       /* Prevent layout shift during font load */
@@ -122,14 +143,50 @@
         font-display: swap;
       }
       
-      /* Reduce layout shift for game grid */
+      /* Critical layout styles */
       #root {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
       }
       
-      /* Optimize critical rendering path */
+      /* Critical game grid styles to prevent CLS */
+      .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        margin: 1rem auto;
+        max-width: 20rem;
+      }
+      
+      .grid-row {
+        display: flex;
+        gap: 0.25rem;
+        justify-content: center;
+      }
+      
+      .cell {
+        width: 3.5rem;
+        height: 3.5rem;
+        border: 2px solid #d1d5db;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+      }
+      
+      /* Critical navigation styles */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      
+      /* Loading optimization */
       .loading {
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
@@ -137,6 +194,29 @@
       
       .loaded {
         opacity: 1;
+      }
+      
+      /* Critical keyboard styles to prevent CLS */
+      .keyboard {
+        margin: 1rem auto 0;
+        max-width: 30rem;
+      }
+      
+      .keyboard-row {
+        display: flex;
+        gap: 0.25rem;
+        margin-bottom: 0.5rem;
+        justify-content: center;
+      }
+      
+      .keyboard-button {
+        height: 3.5rem;
+        border: none;
+        border-radius: 0.25rem;
+        font-weight: 700;
+        cursor: pointer;
+        background-color: #d1d5db;
+        color: #1f2937;
       }
     </style>
     <!--

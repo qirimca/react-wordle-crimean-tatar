@@ -1,7 +1,7 @@
 import './App.css'
 
-import { ClockIcon } from '@heroicons/react/outline'
-import { format } from 'date-fns'
+import { ClockIcon } from './components/icons'
+import { format } from './lib/dateutils'
 import { default as GraphemeSplitter } from 'grapheme-splitter'
 import { useEffect, useState, lazy, Suspense } from 'react'
 import Div100vh from 'react-div-100vh'

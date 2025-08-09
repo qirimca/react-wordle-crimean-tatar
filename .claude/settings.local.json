@@ -45,7 +45,13 @@
       "Bash(git fetch:*)",
       "Bash(npm audit:*)",
       "Bash(npm update)",
-      "Bash(set GITHUB_ACTIONS=true)"
+      "Bash(set GITHUB_ACTIONS=true)",
+      "Bash(del nul)",
+      "mcp__kapture__show",
+      "mcp__kapture__click",
+      "mcp__kapture__elements",
+      "Bash(git checkout:*)",
+      "Bash(chmod:*)"
     ],
     "deny": []
   }

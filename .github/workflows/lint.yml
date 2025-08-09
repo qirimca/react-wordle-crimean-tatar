@@ -15,4 +15,4 @@ jobs:
         uses: creyD/prettier_action@v4.3
         with:
           prettier_options: --check src
-          prettier_plugins: 'prettier-plugin-tailwindcss'
+          prettier_plugins: '@trivago/prettier-plugin-sort-imports prettier-plugin-tailwindcss'

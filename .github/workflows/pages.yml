@@ -35,23 +35,16 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Generate version info
+    - name: Set version environment variables
       run: |
-        VERSION=$(node -p "require('./package.json').version")
-        COMMIT_HASH=${GITHUB_SHA}
-        BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%S.%3NZ")
-        echo "REACT_APP_VERSION=$VERSION" >> .env.local
-        echo "REACT_APP_COMMIT_HASH=$COMMIT_HASH" >> .env.local
-        echo "REACT_APP_BUILD_DATE=$BUILD_DATE" >> .env.local
-        echo "✅ Version info generated for CI: v$VERSION, commit ${COMMIT_HASH:0:7}, $BUILD_DATE"
-        echo "📄 .env.local contents:"
-        cat .env.local
+        echo "REACT_APP_VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
+        echo "REACT_APP_COMMIT_HASH=${{ github.sha }}" >> $GITHUB_ENV
+        echo "REACT_APP_BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%S.%3NZ")" >> $GITHUB_ENV
 
     - name: Build
       run: npm run build
       env:
         CI: false
-        GITHUB_ACTIONS: true
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3

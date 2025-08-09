@@ -157,6 +157,7 @@ export const Keyboard = ({
 
   return (
     <div>
+      {/* First row: 12 letters */}
       <div className="mb-1 flex justify-center">
         {['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'Ğ', 'Ü'].map(
           (key) => (
@@ -169,10 +170,8 @@ export const Keyboard = ({
             />
           ),
         )}
-        <Key width={65.4} value="DELETE" onClick={onClick}>
-          {DELETE_TEXT}
-        </Key>
       </div>
+      {/* Second row: 12 letters */}
       <div className="mb-1 flex justify-center">
         {['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Ş', 'İ', 'Ñ'].map(
           (key) => (
@@ -185,11 +184,12 @@ export const Keyboard = ({
             />
           ),
         )}
-        <Key width={65.4} value="ENTER" onClick={onClick}>
-          {ENTER_TEXT}
-        </Key>
       </div>
+      {/* Third row: DELETE + 10 letters + ENTER = 12 buttons */}
       <div className="flex justify-center">
+        <Key value="DELETE" onClick={onClick}>
+          {DELETE_TEXT}
+        </Key>
         {['Z', 'X', 'C', 'V', 'B', 'N', 'M', 'Ö', 'Ç', 'Â'].map((key) => (
           <Key
             value={key}
@@ -199,6 +199,9 @@ export const Keyboard = ({
             isRevealing={isRevealing}
           />
         ))}
+        <Key value="ENTER" onClick={onClick}>
+          {ENTER_TEXT}
+        </Key>
       </div>
     </div>
   )

@@ -1,8 +1,7 @@
 import { getLocalizedStrings } from '../../constants/locales'
 
 const BUILD_DATE = process.env.REACT_APP_BUILD_DATE || new Date().toISOString()
-const VERSION =
-  process.env.REACT_APP_VERSION || require('../../../package.json').version
+const VERSION = process.env.REACT_APP_VERSION || '1.0.0'
 const COMMIT_HASH = process.env.REACT_APP_COMMIT_HASH || 'dev'
 
 export const VersionInfo = () => {

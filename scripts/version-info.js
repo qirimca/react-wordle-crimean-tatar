@@ -2,15 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-// Перевіряємо, чи запущено в CI (GitHub Actions встановлює environment variables)
-if (process.env.GITHUB_ACTIONS || process.env.CI === 'false') {
-  if (process.env.GITHUB_ACTIONS) {
-    console.log('ℹ️ Running in CI environment, version info handled by workflow environment variables');
-  }
-  if (process.env.REACT_APP_VERSION && process.env.REACT_APP_COMMIT_HASH && process.env.REACT_APP_BUILD_DATE) {
-    console.log('ℹ️ Version environment variables already set, skipping file generation');
-    process.exit(0);
-  }
+// Перевіряємо, чи запущено в CI (повністю пропускаємо в GitHub Actions)
+if (process.env.GITHUB_ACTIONS) {
+  console.log('ℹ️ Running in GitHub Actions, version info handled by workflow environment variables');
+  process.exit(0);
 }
 
 // Отримуємо інформацію про версію та коміт

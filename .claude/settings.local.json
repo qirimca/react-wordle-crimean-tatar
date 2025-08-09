@@ -51,7 +51,8 @@
       "mcp__kapture__click",
       "mcp__kapture__elements",
       "Bash(git checkout:*)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "WebFetch(domain:modem7.github.io)"
     ],
     "deny": []
   }

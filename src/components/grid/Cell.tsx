@@ -31,9 +31,12 @@ export const Cell = ({
       'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-600':
         !status,
       'border-black dark:border-slate-100': value && !status,
-      'absent shadowed cell-absent text-white': status === 'absent',
-      'correct shadowed cell-correct text-white': status === 'correct',
-      'present shadowed cell-present text-white': status === 'present',
+      'absent shadowed bg-qirim-gray dark:bg-slate-700 text-white border-qirim-gray dark:border-slate-700':
+        status === 'absent',
+      'correct shadowed bg-qirim-primary text-white border-qirim-primary':
+        status === 'correct',
+      'present shadowed bg-qirim-accent text-white border-qirim-accent':
+        status === 'present',
       'cell-fill-animation': isFilled,
       'cell-reveal': shouldReveal,
     },

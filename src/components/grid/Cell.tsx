@@ -30,20 +30,16 @@ export const Cell = ({
     {
       'cell-fill-animation': isFilled,
       'cell-reveal': shouldReveal,
-    }
+    },
   )
 
-  const frontClasses = classnames('cell-face front',
-  'w-full h-full rounded',
-  {
+  const frontClasses = classnames('cell-face front', 'w-full h-full rounded', {
     'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-600':
       !status,
     'border-black dark:border-slate-100': value && !status,
   })
 
-  const backClasses = classnames('cell-face back',
-  'w-full h-full rounded',
-  {
+  const backClasses = classnames('cell-face back', 'w-full h-full rounded', {
     'absent shadowed cell-absent text-white': status === 'absent',
     'correct shadowed cell-correct text-white': status === 'correct',
     'present shadowed cell-present text-white': status === 'present',

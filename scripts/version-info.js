@@ -2,6 +2,12 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
+// Перевіряємо, чи запущено в CI (GitHub Actions вже генерує .env.local)
+if (process.env.CI || process.env.GITHUB_ACTIONS) {
+  console.log('ℹ️ Running in CI environment, skipping version generation (handled by workflow)');
+  process.exit(0);
+}
+
 // Отримуємо інформацію про версію та коміт
 const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'package.json'), 'utf8'));
 const version = packageJson.version;

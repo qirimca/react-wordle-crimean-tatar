@@ -37,6 +37,7 @@ export interface LocaleStrings {
   INFO_MODAL_SOURCE_CODE_TEXT: string
   INFO_MODAL_SOURCE_CODE_LINK: string
   INFO_MODAL_KEYBOARD_HINT?: string
+  VERSION_BUILD: string
   // Settings Modal
   SETTINGS_TITLE: string
   TRANSFER_STATS_TEXT: string
@@ -109,6 +110,7 @@ export const LOCALE_CRH: LocaleStrings = {
   INFO_MODAL_SOURCE_CODE_LINK: 'kodqa şu yerde baqıñız',
   INFO_MODAL_KEYBOARD_HINT:
     'iOS qullanıcıları içün: Daha qolay giriş içün QırımKey klavyesini yükley bilesiñiz.',
+  VERSION_BUILD: 'Inal',
   // Settings Modal
   SETTINGS_TITLE: 'Ayarlar',
   TRANSFER_STATS_TEXT: 'Statistikalarıñıznı köçür',
@@ -125,75 +127,6 @@ export const LOCALE_CRH: LocaleStrings = {
   MIGRATE_BUTTON_TEXT: 'Köçür',
   MIGRATE_DESCRIPTION_TEXT:
     'Statistikalarıñıznı yañı cihazğa köçürmek içün munğa tıqlañız.',
-  // Navbar
-  BY_TEXT: ' by ',
-}
-
-export const LOCALE_EN: LocaleStrings = {
-  GAME_TITLE: 'Crimean Tatar Wordle',
-  WIN_MESSAGES: ['Great!', 'Awesome!', 'Well done!', 'Perfect!', 'Excellent!'],
-  GAME_COPIED_MESSAGE: 'Game copied to clipboard',
-  NOT_ENOUGH_LETTERS_MESSAGE: 'Not enough letters',
-  WORD_NOT_FOUND_MESSAGE: 'Word not found',
-  HARD_MODE_ALERT_MESSAGE: 'Hard mode can only be enabled at the start!',
-  HARD_MODE_DESCRIPTION:
-    'Any revealed hints must be used in subsequent guesses',
-  HIGH_CONTRAST_MODE_DESCRIPTION: 'For improved color vision',
-  CORRECT_WORD_MESSAGE: (solution: string) => `The word was ${solution}`,
-  WRONG_SPOT_MESSAGE: (guess: string, position: number) =>
-    `Must use ${guess} in position ${position}`,
-  NOT_CONTAINED_MESSAGE: (letter: string) => `Guess must contain ${letter}`,
-  ENTER_TEXT: 'done',
-  DELETE_TEXT: 'backspace',
-  STATISTICS_TITLE: 'Statistics',
-  GUESS_DISTRIBUTION_TEXT: 'Guess Distribution',
-  NEW_WORD_TEXT: 'New word',
-  SHARE_TEXT: 'Share',
-  SHARE_FAILURE_TEXT:
-    'Unable to share the results. This feature is available only in secure contexts (HTTPS).',
-  TOTAL_TRIES_TEXT: 'Total tries',
-  SUCCESS_RATE_TEXT: 'Success rate',
-  CURRENT_STREAK_TEXT: 'Current streak',
-  BEST_STREAK_TEXT: 'Best streak',
-  DISCOURAGE_INAPP_BROWSER_TEXT:
-    "You are using an embedded browser and may experience problems sharing or saving your results. We encourage you to use your device's default browser.",
-  DATEPICKER_TITLE: 'Choose past date',
-  DATEPICKER_CHOOSE_TEXT: 'Choose',
-  DATEPICKER_TODAY_TEXT: 'today',
-  ARCHIVE_GAMEDATE_TEXT: 'Game date',
-  // Info Modal
-  INFO_MODAL_TITLE: 'How to play',
-  INFO_MODAL_DESCRIPTION:
-    'Guess the word in 6 tries. After each guess, the color of the tiles will change to show how close your guess was to the word.',
-  INFO_MODAL_CORRECT_EXPLANATION:
-    'The letter K is in the word and in the correct spot.',
-  INFO_MODAL_PRESENT_EXPLANATION:
-    'The letter L is in the word but in the wrong spot.',
-  INFO_MODAL_ABSENT_EXPLANATION: 'The letter E is not in the word in any spot.',
-  INFO_MODAL_BETA_TITLE: '⚠️ Beta version',
-  INFO_MODAL_BETA_DESCRIPTION:
-    'This translation was automatically generated and is being reviewed by volunteers. Please contact us to report errors and help improve translations!',
-  INFO_MODAL_SOURCE_CODE_TEXT:
-    'This is an open source version of the word guessing game we all know and love',
-  INFO_MODAL_SOURCE_CODE_LINK: 'check out the code here',
-  INFO_MODAL_KEYBOARD_HINT:
-    'For iOS users: You can download the QırımKey keyboard for easier input.',
-  // Settings Modal
-  SETTINGS_TITLE: 'Settings',
-  TRANSFER_STATS_TEXT: 'Transfer your statistics',
-  HARD_MODE_TEXT: 'Hard Mode',
-  DARK_MODE_TEXT: 'Dark Mode',
-  HIGH_CONTRAST_MODE_TEXT: 'High Contrast Mode',
-  // Transfer Stats Modal
-  TRANSFER_INSTRUCTIONS_TEXT:
-    'Copy the migration code on your old device and paste into the input on the new device.',
-  THIS_IS_MY_TEXT: 'This is my:',
-  OLD_DEVICE_TEXT: 'old device',
-  NEW_DEVICE_TEXT: 'new device',
-  // Migration Stats
-  MIGRATE_BUTTON_TEXT: 'Transfer',
-  MIGRATE_DESCRIPTION_TEXT:
-    'Click here to transfer your statistics to a new device.',
   // Navbar
   BY_TEXT: ' by ',
 }
@@ -252,6 +185,7 @@ export const LOCALE_TR: LocaleStrings = {
   INFO_MODAL_SOURCE_CODE_LINK: 'koda buradan bakın',
   INFO_MODAL_KEYBOARD_HINT:
     'iOS kullanıcıları için: Daha kolay giriş için QırımKey klavyesini yükleyebilirsiniz.',
+  VERSION_BUILD: 'İnşa',
   // Settings Modal
   SETTINGS_TITLE: 'Ayarlar',
   TRANSFER_STATS_TEXT: 'İstatistiklerinizi aktarın',
@@ -326,6 +260,7 @@ export const LOCALE_UK: LocaleStrings = {
   INFO_MODAL_SOURCE_CODE_LINK: 'подивитися код тут',
   INFO_MODAL_KEYBOARD_HINT:
     'Для користувачів iOS: Ви можете завантажити клавіатуру QırımKey для зручнішого введення.',
+  VERSION_BUILD: 'Збірка',
   // Settings Modal
   SETTINGS_TITLE: 'Налаштування',
   TRANSFER_STATS_TEXT: 'Перенести вашу статистику',
@@ -344,6 +279,76 @@ export const LOCALE_UK: LocaleStrings = {
     'Натисніть тут, щоб перенести статистику на новий пристрій.',
   // Navbar
   BY_TEXT: ' від ',
+}
+
+export const LOCALE_EN: LocaleStrings = {
+  GAME_TITLE: 'Crimean Tatar Wordle',
+  WIN_MESSAGES: ['Great!', 'Awesome!', 'Well done!', 'Perfect!', 'Excellent!'],
+  GAME_COPIED_MESSAGE: 'Game copied to clipboard',
+  NOT_ENOUGH_LETTERS_MESSAGE: 'Not enough letters',
+  WORD_NOT_FOUND_MESSAGE: 'Word not found',
+  HARD_MODE_ALERT_MESSAGE: 'Hard Mode can only be enabled at the start!',
+  HARD_MODE_DESCRIPTION:
+    'Any revealed hints must be used in subsequent guesses',
+  HIGH_CONTRAST_MODE_DESCRIPTION: 'For improved color vision',
+  CORRECT_WORD_MESSAGE: (solution: string) => `The word was ${solution}`,
+  WRONG_SPOT_MESSAGE: (guess: string, position: number) =>
+    `Must use ${guess} in position ${position}`,
+  NOT_CONTAINED_MESSAGE: (letter: string) => `Guess must contain ${letter}`,
+  ENTER_TEXT: 'done',
+  DELETE_TEXT: 'backspace',
+  STATISTICS_TITLE: 'Statistics',
+  GUESS_DISTRIBUTION_TEXT: 'Guess Distribution',
+  NEW_WORD_TEXT: 'New word',
+  SHARE_TEXT: 'Share',
+  SHARE_FAILURE_TEXT:
+    'Unable to share the results. This feature is only available in secure contexts (HTTPS).',
+  TOTAL_TRIES_TEXT: 'Total tries',
+  SUCCESS_RATE_TEXT: 'Success rate',
+  CURRENT_STREAK_TEXT: 'Current streak',
+  BEST_STREAK_TEXT: 'Best streak',
+  DISCOURAGE_INAPP_BROWSER_TEXT:
+    "You are using an embedded browser and may experience problems sharing or saving your results. We encourage you to use your device's default browser.",
+  DATEPICKER_TITLE: 'Choose past date',
+  DATEPICKER_CHOOSE_TEXT: 'Choose',
+  DATEPICKER_TODAY_TEXT: 'today',
+  ARCHIVE_GAMEDATE_TEXT: 'Game date',
+  // Info Modal
+  INFO_MODAL_TITLE: 'How to play',
+  INFO_MODAL_DESCRIPTION:
+    'Guess the word in 6 tries. After each guess, the color of the tiles will change to show how close your guess was to the word.',
+  INFO_MODAL_CORRECT_EXPLANATION:
+    'The letter K is in the word and in the correct spot.',
+  INFO_MODAL_PRESENT_EXPLANATION:
+    'The letter L is in the word but in the wrong spot.',
+  INFO_MODAL_ABSENT_EXPLANATION: 'The letter E is not in the word in any spot.',
+  INFO_MODAL_BETA_TITLE: '⚠️ Beta version',
+  INFO_MODAL_BETA_DESCRIPTION:
+    'This translation was auto-generated and is being reviewed by volunteers. Please contact us to report errors and help improve translations!',
+  INFO_MODAL_SOURCE_CODE_TEXT:
+    'This is an open source version of the word guessing game we all know and love',
+  INFO_MODAL_SOURCE_CODE_LINK: 'check out the code here',
+  INFO_MODAL_KEYBOARD_HINT:
+    'For iOS users: You can download the QırımKey keyboard for easier input.',
+  VERSION_BUILD: 'Build',
+  // Settings Modal
+  SETTINGS_TITLE: 'Settings',
+  TRANSFER_STATS_TEXT: 'Transfer your statistics',
+  HARD_MODE_TEXT: 'Hard Mode',
+  DARK_MODE_TEXT: 'Dark Mode',
+  HIGH_CONTRAST_MODE_TEXT: 'High Contrast Mode',
+  // Transfer Stats Modal
+  TRANSFER_INSTRUCTIONS_TEXT:
+    'Copy the migration code on your old device and paste it into the input on your new device.',
+  THIS_IS_MY_TEXT: 'This is my:',
+  OLD_DEVICE_TEXT: 'old device',
+  NEW_DEVICE_TEXT: 'new device',
+  // Migration Stats
+  MIGRATE_BUTTON_TEXT: 'Migrate',
+  MIGRATE_DESCRIPTION_TEXT:
+    'Click here to transfer your statistics to a new device.',
+  // Navbar
+  BY_TEXT: ' by ',
 }
 
 export const getLocale = (): string => {
@@ -366,6 +371,8 @@ export const getLocalizedStrings = (): LocaleStrings => {
       return LOCALE_EN
     case 'uk':
       return LOCALE_UK
+    case 'tr':
+      return LOCALE_TR
     case 'crh':
     default:
       return LOCALE_CRH

@@ -1,5 +1,6 @@
 import { getLocalizedStrings } from '../../constants/locales'
 import { Cell } from '../grid/Cell'
+import { VersionInfo } from '../info/VersionInfo'
 import { LanguageSelector } from '../navbar/LanguageSelector'
 import { BaseModal } from './BaseModal'
 
@@ -111,6 +112,8 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
           {strings.INFO_MODAL_SOURCE_CODE_LINK}
         </a>{' '}
       </p>
+
+      <VersionInfo />
     </BaseModal>
   )
 }

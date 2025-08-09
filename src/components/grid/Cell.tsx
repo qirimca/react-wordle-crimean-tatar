@@ -10,6 +10,7 @@ type Props = {
   isRevealing?: boolean
   isCompleted?: boolean
   position?: number
+  useNewAnimation?: boolean
 }
 
 export const Cell = ({
@@ -18,6 +19,7 @@ export const Cell = ({
   isRevealing,
   isCompleted,
   position = 0,
+  useNewAnimation = false,
 }: Props) => {
   const isFilled = value && !isCompleted
   const shouldReveal = isRevealing && isCompleted
@@ -35,9 +37,29 @@ export const Cell = ({
       'correct shadowed cell-correct text-white': status === 'correct',
       'present shadowed cell-present text-white': status === 'present',
       'cell-fill-animation': isFilled,
-      'cell-reveal': shouldReveal,
-    },
+      'cell-reveal': shouldReveal && !useNewAnimation,
+      'cell-flip-new': shouldReveal && useNewAnimation,
+    }
   )
+
+  if (useNewAnimation) {
+    const frontClasses = classnames('cell-face front', 'w-full h-full rounded', {
+      'bg-white dark:bg-slate-900': !status,
+    })
+
+    const backClasses = classnames('cell-face back', 'w-full h-full rounded', {
+      'absent shadowed cell-absent text-white': status === 'absent',
+      'correct shadowed cell-correct text-white': status === 'correct',
+      'present shadowed cell-present text-white': status === 'present',
+    })
+
+    return (
+      <div className={classes} style={{ animationDelay }}>
+        <div className={frontClasses}>{value}</div>
+        <div className={backClasses}>{value}</div>
+      </div>
+    )
+  }
 
   return (
     <div className={classes} style={{ animationDelay }}>

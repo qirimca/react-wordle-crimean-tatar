@@ -22,6 +22,7 @@ export const CompletedRow = ({ solution, guess, isRevealing }: Props) => {
           position={i}
           isRevealing={isRevealing}
           isCompleted
+          useNewAnimation={true}
         />
       ))}
     </div>

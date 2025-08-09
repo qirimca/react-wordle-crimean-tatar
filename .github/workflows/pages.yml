@@ -44,11 +44,14 @@ jobs:
         echo "REACT_APP_COMMIT_HASH=$COMMIT_HASH" >> .env.local
         echo "REACT_APP_BUILD_DATE=$BUILD_DATE" >> .env.local
         echo "✅ Version info generated for CI: v$VERSION, commit ${COMMIT_HASH:0:7}, $BUILD_DATE"
+        echo "📄 .env.local contents:"
+        cat .env.local
 
     - name: Build
       run: npm run build
       env:
         CI: false
+        GITHUB_ACTIONS: true
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3

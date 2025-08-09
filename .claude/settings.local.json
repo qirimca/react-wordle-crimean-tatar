@@ -44,7 +44,8 @@
       "mcp__kapture__keypress",
       "Bash(git fetch:*)",
       "Bash(npm audit:*)",
-      "Bash(npm update)"
+      "Bash(npm update)",
+      "Bash(set GITHUB_ACTIONS=true)"
     ],
     "deny": []
   }

@@ -3,7 +3,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 // Перевіряємо, чи запущено в CI (GitHub Actions вже генерує .env.local)
-if (process.env.CI || process.env.GITHUB_ACTIONS) {
+if (process.env.GITHUB_ACTIONS === 'true') {
   console.log('ℹ️ Running in CI environment, skipping version generation (handled by workflow)');
   process.exit(0);
 }

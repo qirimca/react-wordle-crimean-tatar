@@ -16,7 +16,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "prebuild": "node -e \"if (!process.env.GITHUB_ACTIONS) require('./scripts/version-info.js')\"",
+    "prebuild": "node scripts/version-info.js",
     "build": "set \"CI=false\" && react-scripts build",
     "eject": "react-scripts eject",
     "fix": "prettier --write src",

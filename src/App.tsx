@@ -1,13 +1,12 @@
 import './App.css'
 
-import { ClockIcon } from './components/icons'
-import { format } from './lib/dateutils'
 import { default as GraphemeSplitter } from 'grapheme-splitter'
-import { useEffect, useState, lazy, Suspense } from 'react'
+import { Suspense, lazy, useEffect, useState } from 'react'
 import Div100vh from 'react-div-100vh'
 
 import { AlertContainer } from './components/alerts/AlertContainer'
 import { Grid } from './components/grid/Grid'
+import { ClockIcon } from './components/icons'
 import { Keyboard } from './components/keyboard/Keyboard'
 import { Navbar } from './components/navbar/Navbar'
 import {
@@ -30,6 +29,7 @@ import {
 } from './constants/strings'
 import { useAlert } from './context/AlertContext'
 import { isInAppBrowser } from './lib/browser'
+import { format } from './lib/dateutils'
 import {
   getStoredIsHighContrastMode,
   loadGameStateFromLocalStorage,

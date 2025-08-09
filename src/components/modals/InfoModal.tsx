@@ -1,7 +1,7 @@
-import { Cell } from '../grid/Cell'
-import { BaseModal } from './BaseModal'
 import { getLocalizedStrings } from '../../constants/locales'
+import { Cell } from '../grid/Cell'
 import { LanguageSelector } from '../navbar/LanguageSelector'
+import { BaseModal } from './BaseModal'
 
 type Props = {
   isOpen: boolean

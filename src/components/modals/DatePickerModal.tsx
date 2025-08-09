@@ -1,5 +1,4 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline'
-import { addDays, format, startOfDay } from '../../lib/dateutils'
 import { useState } from 'react'
 import DatePicker, { registerLocale } from 'react-datepicker'
 
@@ -9,6 +8,7 @@ import {
   DATEPICKER_TITLE,
   DATEPICKER_TODAY_TEXT,
 } from '../../constants/strings'
+import { addDays, format, startOfDay } from '../../lib/dateutils'
 import { getToday, getYesterday } from '../../lib/dateutils'
 import {
   firstGameDate,

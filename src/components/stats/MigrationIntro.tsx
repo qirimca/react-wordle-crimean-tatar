@@ -1,4 +1,5 @@
 import { LogoutIcon } from '@heroicons/react/outline'
+
 import { getLocalizedStrings } from '../../constants/locales'
 
 type Props = {

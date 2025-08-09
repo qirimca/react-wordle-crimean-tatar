@@ -5,8 +5,8 @@ import {
   InformationCircleIcon,
 } from '@heroicons/react/outline'
 
-import { ENABLE_ARCHIVED_GAMES } from '../../constants/settings'
 import { getLocalizedStrings } from '../../constants/locales'
+import { ENABLE_ARCHIVED_GAMES } from '../../constants/settings'
 
 type Props = {
   setIsInfoModalOpen: (value: boolean) => void

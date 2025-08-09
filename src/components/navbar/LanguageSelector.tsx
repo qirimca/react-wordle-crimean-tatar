@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import { getLocale } from '../../constants/locales'
 
 interface Language {

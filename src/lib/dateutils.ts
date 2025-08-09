@@ -1,9 +1,9 @@
 import {
+  addDays,
+  format,
+  startOfDay,
   startOfToday,
   startOfYesterday,
-  format,
-  addDays,
-  startOfDay,
 } from 'date-fns'
 
 export const getToday = () => startOfToday()

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-import { GameStats, StoredGameState } from '../../lib/localStorage'
 import { getLocalizedStrings } from '../../constants/locales'
+import { GameStats, StoredGameState } from '../../lib/localStorage'
 import { EmigratePanel } from '../stats/EmigratePanel'
 import { ImmigratePanel } from '../stats/ImmigratePanel'
 import { BaseModal } from './BaseModal'

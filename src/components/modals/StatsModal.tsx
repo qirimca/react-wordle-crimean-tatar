@@ -1,5 +1,4 @@
 import { ClockIcon, ShareIcon } from '@heroicons/react/outline'
-import { format } from '../../lib/dateutils'
 import Countdown from 'react-countdown'
 
 import {
@@ -14,6 +13,7 @@ import {
   SHARE_TEXT,
   STATISTICS_TITLE,
 } from '../../constants/strings'
+import { format } from '../../lib/dateutils'
 import { GameStats } from '../../lib/localStorage'
 import { shareStatus } from '../../lib/share'
 import { solutionGameDate, tomorrow } from '../../lib/words'
